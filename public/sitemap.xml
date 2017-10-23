@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/10/23/java-toup14/</loc>
+    
+    <lastmod>2017-10-23T15:09:39.790Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/10/23/java-toup13/</loc>
     
-    <lastmod>2017-10-23T14:48:11.710Z</lastmod>
+    <lastmod>2017-10-23T14:57:19.882Z</lastmod>
     
   </url>
   
@@ -72,13 +79,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/10/23/java-toup14/</loc>
-    
-    <lastmod>2017-10-23T14:38:36.374Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2017/10/23/java-toup10/</loc>
     
     <lastmod>2017-10-23T14:37:14.941Z</lastmod>
@@ -128,6 +128,13 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/2017/10/20/xuedinge/</loc>
+    
+    <lastmod>2017-10-23T13:23:34.771Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/10/20/nginx/</loc>
     
     <lastmod>2017-10-23T13:23:34.771Z</lastmod>
@@ -135,9 +142,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/10/20/xuedinge/</loc>
+    <loc>http://yoursite.com/2017/10/23/java-toup9/</loc>
     
-    <lastmod>2017-10-23T13:23:34.771Z</lastmod>
+    <lastmod>2017-10-23T13:23:34.770Z</lastmod>
     
   </url>
   
@@ -149,9 +156,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/10/23/java-toup9/</loc>
+    <loc>http://yoursite.com/2017/10/23/java-toup7/</loc>
     
-    <lastmod>2017-10-23T13:23:34.770Z</lastmod>
+    <lastmod>2017-10-23T13:23:34.769Z</lastmod>
     
   </url>
   
@@ -170,21 +177,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/10/23/java-toup7/</loc>
-    
-    <lastmod>2017-10-23T13:23:34.769Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/10/23/java-toup4/</loc>
+    <loc>http://yoursite.com/2017/10/23/java-toup3/</loc>
     
     <lastmod>2017-10-23T13:23:34.768Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/10/23/java-toup3/</loc>
+    <loc>http://yoursite.com/2017/10/23/java-toup4/</loc>
     
     <lastmod>2017-10-23T13:23:34.768Z</lastmod>
     

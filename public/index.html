@@ -1200,7 +1200,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/23/java-toup14/" itemprop="url">java-toup14</a></h1>
+                <a class="post-title-link" href="/2017/10/23/java-toup14/" itemprop="url">java提高篇（十三）-----字符串</a></h1>
         
 
         <div class="post-meta">
@@ -1223,6 +1223,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java开发/" itemprop="url" rel="index">
+                    <span itemprop="name">java开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -1244,7 +1266,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0 字
+                  2,870 字
                 </span>
               
 
@@ -1270,9 +1292,18 @@
 
       
         
-          
-            
-          
+          <blockquote>
+<p>转载： <a href="http://blog.csdn.net/chenssy/article/details/17591363" target="_blank" rel="external">http://blog.csdn.net/chenssy/article/details/17591363</a></p>
+</blockquote>
+<p>可以证明，字符串操作是计算机程序设计中最常见的行为。</p>
+<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p>首先我们要明确，String并不是基本数据类型，而是一个对象，并且是不可变的对象。查看源码就会发现String类为final型的（当然也不可被继承），而且通过查看JDK文档会发现几乎每一个修改String对象的操作，实际上都是创建了一个全新的String对象。<br>字符串为对象，那么在初始化之前，它的值为null，到这里就有必要提下””、null、new String()三者的区别。null 表示string还没有new ，也就是说对象的引用还没有创建，也没有分配内存空间给他，而””、new String()则说明了已经new了，只不过内部为空，但是它创建了对象的引用，是需要分配内存空间的。打个比方：一个空玻璃杯，你不能说它里面什么都没有，因为里面有空气，当然也可以把它弄成真空，null与” “、new String()的区别就象真空与空气一样。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/23/java-toup14/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1404,7 +1435,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,473 字
+                  1,475 字
                 </span>
               
 
@@ -2015,9 +2046,10 @@
   
 
 
+
+
   
-
-
+  
 
 
 
@@ -2059,7 +2091,12 @@
 
   
   
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
   
 
 
