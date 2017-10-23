@@ -106,7 +106,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="java,转载," />
 
 
 
@@ -119,14 +119,18 @@
 
 
 
+<meta name="description" content="转载： http://blog.csdn.net/chenssy/article/details/13168265  多重继承指的是一个类可以同时从多于一个的父类那里继承行为和特征，然而我们知道Java为了保证数据安全，它只允许单继承。有些时候我们会认为如果系统中需要使用多重继承往往都是糟糕的设计,这个时候我们往往需要思考的不是怎么使用多重继承,而是您的设计是否存在问题.但有时候我们确实是需要实">
+<meta name="keywords" content="java,转载">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java-toup9">
+<meta property="og:title" content="java提高篇（八）-----实现多重继承">
 <meta property="og:url" content="http://yoursite.com/2017/10/23/java-toup9/index.html">
 <meta property="og:site_name" content="Carlos的个人博客">
+<meta property="og:description" content="转载： http://blog.csdn.net/chenssy/article/details/13168265  多重继承指的是一个类可以同时从多于一个的父类那里继承行为和特征，然而我们知道Java为了保证数据安全，它只允许单继承。有些时候我们会认为如果系统中需要使用多重继承往往都是糟糕的设计,这个时候我们往往需要思考的不是怎么使用多重继承,而是您的设计是否存在问题.但有时候我们确实是需要实">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-23T05:38:22.939Z">
+<meta property="og:updated_time" content="2017-10-23T13:23:34.770Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java-toup9">
+<meta name="twitter:title" content="java提高篇（八）-----实现多重继承">
+<meta name="twitter:description" content="转载： http://blog.csdn.net/chenssy/article/details/13168265  多重继承指的是一个类可以同时从多于一个的父类那里继承行为和特征，然而我们知道Java为了保证数据安全，它只允许单继承。有些时候我们会认为如果系统中需要使用多重继承往往都是糟糕的设计,这个时候我们往往需要思考的不是怎么使用多重继承,而是您的设计是否存在问题.但有时候我们确实是需要实">
 
 
 
@@ -162,7 +166,7 @@
 
 
 
-  <title>java-toup9 | Carlos的个人博客</title>
+  <title>java提高篇（八）-----实现多重继承 | Carlos的个人博客</title>
   
 
 
@@ -370,7 +374,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">java-toup9</h1>
+          <h1 class="post-title" itemprop="name headline">java提高篇（八）-----实现多重继承</h1>
         
 
         <div class="post-meta">
@@ -392,6 +396,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java开发/" itemprop="url" rel="index">
+                    <span itemprop="name">java开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -424,7 +450,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0 字
+                  823 字
                 </span>
               
 
@@ -449,7 +475,16 @@
       
 
       
-        
+        <blockquote>
+<p>转载： <a href="http://blog.csdn.net/chenssy/article/details/13168265" target="_blank" rel="external">http://blog.csdn.net/chenssy/article/details/13168265</a></p>
+</blockquote>
+<p>多重继承指的是一个类可以同时从多于一个的父类那里继承行为和特征，然而我们知道Java为了保证数据安全，它只允许单继承。有些时候我们会认为如果系统中需要使用多重继承往往都是糟糕的设计,这个时候我们往往需要思考的不是怎么使用多重继承,而是您的设计是否存在问题.但有时候我们确实是需要实现多重继承，而且现实生活中也真正地存在这样的情况，比如遗传：我们即继承了父亲的行为和特征也继承了母亲的行为和特征。可幸的是Java是非常和善和理解我们的,它提供了两种方式让我们曲折来实现多重继承：接口和内部类。</p>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>在介绍接口和抽象类的时候了解到子类只能继承一个父类，也就是说只能存在单一继承，但是却可以实现多个接口，这就为我们实现多重继承做了铺垫。<br><a id="more"></a><br>对于接口而已，有时候它所表现的不仅仅只是一个更纯粹的抽象类，接口是没有任何具体实现的，也就是说，没有任何与接口相关的存储，因此也就无法阻止多个接口的组合了。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">CanFight</span> </span>&#123;  </div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fight</span><span class="params">()</span></span>;  </div><div class="line">&#125;  </div><div class="line"></div><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">CanSwim</span> </span>&#123;  </div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">swim</span><span class="params">()</span></span>;  </div><div class="line">&#125;  </div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">CanFly</span> </span>&#123;  </div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fly</span><span class="params">()</span></span>;  </div><div class="line">&#125;  </div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ActionCharacter</span> </span>&#123;  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fight</span><span class="params">()</span></span>&#123;  </div><div class="line">        </div><div class="line">    &#125;  </div><div class="line">&#125;  </div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hero</span> <span class="keyword">extends</span> <span class="title">ActionCharacter</span> <span class="keyword">implements</span> <span class="title">CanFight</span>,<span class="title">CanFly</span>,<span class="title">CanSwim</span></span>&#123;  </div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fly</span><span class="params">()</span> </span>&#123;  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">swim</span><span class="params">()</span> </span>&#123;  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    <span class="comment">/** </span></div><div class="line"><span class="comment">    * 对于fight()方法，继承父类的，所以不需要显示声明 </span></div><div class="line"><span class="comment">    */</span>  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h2><p>上面使用接口实现多重继承是一种比较可行和普遍的方式，在介绍内部类的时候谈到内部类使的多继承的实现变得更加完美了，同时也明确了如果父类为抽象类或者具体类，那么我就仅能通过内部类来实现多重继承了。如何利用内部类实现多重继承，请看下面实例：儿子是如何利用多重继承来继承父亲和母亲的优良基因。<br>首先是父亲Father和母亲Mother：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Father</span> </span>&#123;  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">strong</span><span class="params">()</span></span>&#123;  </div><div class="line">        <span class="keyword">return</span> <span class="number">9</span>;  </div><div class="line">    &#125;  </div><div class="line">&#125;  </div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Mother</span> </span>&#123;  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">kind</span><span class="params">()</span></span>&#123;  </div><div class="line">        <span class="keyword">return</span> <span class="number">8</span>;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>重头戏在这里，儿子类Son：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Son</span> </span>&#123;  </div><div class="line">    </div><div class="line">    <span class="comment">/** </span></div><div class="line"><span class="comment">    * 内部类继承Father类 </span></div><div class="line"><span class="comment">    */</span>  </div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Father_1</span> <span class="keyword">extends</span> <span class="title">Father</span></span>&#123;  </div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">strong</span><span class="params">()</span></span>&#123;  </div><div class="line">            <span class="keyword">return</span> <span class="keyword">super</span>.strong() + <span class="number">1</span>;  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">    </div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Mother_1</span> <span class="keyword">extends</span>  <span class="title">Mother</span></span>&#123;  </div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">kind</span><span class="params">()</span></span>&#123;  </div><div class="line">            <span class="keyword">return</span> <span class="keyword">super</span>.kind() - <span class="number">2</span>;  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getStrong</span><span class="params">()</span></span>&#123;  </div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Father_1().strong();  </div><div class="line">    &#125;  </div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getKind</span><span class="params">()</span></span>&#123;  </div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Mother_1().kind();  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>测试程序：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test1</span> </span>&#123;  </div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </div><div class="line">        Son son = <span class="keyword">new</span> Son();  </div><div class="line">        System.out.println(<span class="string">"Son 的Strong："</span> + son.getStrong());  </div><div class="line">        System.out.println(<span class="string">"Son 的kind："</span> + son.getKind());  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">&#125;  </div><div class="line">----------------------------------------  </div><div class="line">Output:  </div><div class="line">Son 的Strong：<span class="number">10</span>  </div><div class="line">Son 的kind：<span class="number">6</span></div></pre></td></tr></table></figure></p>
+<p>儿子继承了父亲，变得比父亲更加强壮，同时也继承了母亲，只不过温柔指数下降了。这里定义了两个内部类，他们分别继承父亲Father类、母亲类Mother类，且都可以非常自然地获取各自父类的行为，这是内部类一个重要的特性：内部类可以继承一个与外部类无关的类，保证了内部类的独立性，正是基于这一点，多重继承才会成为可能。</p>
+
       
     </div>
     
@@ -493,6 +528,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/转载/" rel="tag"># 转载</a>
+          
+        </div>
+      
 
       
       
@@ -502,8 +545,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/23/java-toup8/" rel="next" title="java-toup8">
-                <i class="fa fa-chevron-left"></i> java-toup8
+              <a href="/2017/10/23/java-toup9.1/" rel="next" title="java提高篇（八）-----实现多重继承">
+                <i class="fa fa-chevron-left"></i> java提高篇（八）-----实现多重继承
               </a>
             
           </div>
@@ -512,8 +555,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/23/java-toup10/" rel="prev" title="java-toup10">
-                java-toup10 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/23/java-toup10/" rel="prev" title="java提高篇（九）-----详解匿名内部类">
+                java提高篇（九）-----详解匿名内部类 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -575,8 +618,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -595,7 +647,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -669,6 +721,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#接口"><span class="nav-number">1.</span> <span class="nav-text">接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内部类"><span class="nav-number">2.</span> <span class="nav-text">内部类</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

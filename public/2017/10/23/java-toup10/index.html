@@ -106,7 +106,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="java,转载," />
 
 
 
@@ -119,14 +119,18 @@
 
 
 
+<meta name="description" content="转载： http://blog.csdn.net/chenssy/article/details/13170015  在java提高篇—–详解内部类中对匿名内部类做了一个简单的介绍，但是内部类还存在很多其他细节问题，所以就衍生出这篇博客。在这篇博客中你可以了解到匿名内部类的使用、匿名内部类要注意的事项、如何初始化匿名内部类、匿名内部类使用的形参为何要为final。 使用匿名内部类内部类匿名内部类">
+<meta name="keywords" content="java,转载">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java-toup10">
+<meta property="og:title" content="java提高篇（九）-----详解匿名内部类">
 <meta property="og:url" content="http://yoursite.com/2017/10/23/java-toup10/index.html">
 <meta property="og:site_name" content="Carlos的个人博客">
+<meta property="og:description" content="转载： http://blog.csdn.net/chenssy/article/details/13170015  在java提高篇—–详解内部类中对匿名内部类做了一个简单的介绍，但是内部类还存在很多其他细节问题，所以就衍生出这篇博客。在这篇博客中你可以了解到匿名内部类的使用、匿名内部类要注意的事项、如何初始化匿名内部类、匿名内部类使用的形参为何要为final。 使用匿名内部类内部类匿名内部类">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-23T05:38:35.892Z">
+<meta property="og:updated_time" content="2017-10-23T14:37:14.941Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java-toup10">
+<meta name="twitter:title" content="java提高篇（九）-----详解匿名内部类">
+<meta name="twitter:description" content="转载： http://blog.csdn.net/chenssy/article/details/13170015  在java提高篇—–详解内部类中对匿名内部类做了一个简单的介绍，但是内部类还存在很多其他细节问题，所以就衍生出这篇博客。在这篇博客中你可以了解到匿名内部类的使用、匿名内部类要注意的事项、如何初始化匿名内部类、匿名内部类使用的形参为何要为final。 使用匿名内部类内部类匿名内部类">
 
 
 
@@ -162,7 +166,7 @@
 
 
 
-  <title>java-toup10 | Carlos的个人博客</title>
+  <title>java提高篇（九）-----详解匿名内部类 | Carlos的个人博客</title>
   
 
 
@@ -370,7 +374,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">java-toup10</h1>
+          <h1 class="post-title" itemprop="name headline">java提高篇（九）-----详解匿名内部类</h1>
         
 
         <div class="post-meta">
@@ -392,6 +396,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java开发/" itemprop="url" rel="index">
+                    <span itemprop="name">java开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -424,7 +450,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0 字
+                  1,700 字
                 </span>
               
 
@@ -449,7 +475,29 @@
       
 
       
-        
+        <blockquote>
+<p>转载： <a href="http://blog.csdn.net/chenssy/article/details/13170015" target="_blank" rel="external">http://blog.csdn.net/chenssy/article/details/13170015</a></p>
+</blockquote>
+<p>在java提高篇—–详解内部类中对匿名内部类做了一个简单的介绍，但是内部类还存在很多其他细节问题，所以就衍生出这篇博客。在这篇博客中你可以了解到匿名内部类的使用、匿名内部类要注意的事项、如何初始化匿名内部类、匿名内部类使用的形参为何要为final。</p>
+<h2 id="使用匿名内部类内部类"><a href="#使用匿名内部类内部类" class="headerlink" title="使用匿名内部类内部类"></a>使用匿名内部类内部类</h2><p>匿名内部类由于没有名字，所以它的创建方式有点儿奇怪。创建格式如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> 父类构造器（参数列表）|实现接口（）    </div><div class="line">    &#123;    </div><div class="line">    <span class="comment">//匿名内部类的类体部分    </span></div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>在这里我们看到使用匿名内部类我们必须要继承一个父类或者实现一个接口，当然也仅能只继承一个父类或者实现一个接口。同时它也是没有class关键字，这是因为匿名内部类是直接使用new来生成一个对象的引用。当然这个引用是隐式的。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Bird</span> </span>&#123;  </div><div class="line">    <span class="keyword">private</span> String name;  </div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;  </div><div class="line">        <span class="keyword">return</span> name;  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;  </div><div class="line">        <span class="keyword">this</span>.name = name;  </div><div class="line">    &#125;  </div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">int</span> <span class="title">fly</span><span class="params">()</span></span>;  </div><div class="line">&#125;  </div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;  </div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(Bird bird)</span></span>&#123;  </div><div class="line">        System.out.println(bird.getName() + <span class="string">"能够飞 "</span> + bird.fly() + <span class="string">"米"</span>);  </div><div class="line">    &#125;  </div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </div><div class="line">        Test test = <span class="keyword">new</span> Test();  </div><div class="line">        test.test(<span class="keyword">new</span> Bird() &#123;  </div><div class="line">            </div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">fly</span><span class="params">()</span> </span>&#123;  </div><div class="line">                <span class="keyword">return</span> <span class="number">10000</span>;  </div><div class="line">            &#125;  </div><div class="line">            </div><div class="line">            <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;  </div><div class="line">                <span class="keyword">return</span> <span class="string">"大雁"</span>;  </div><div class="line">            &#125;  </div><div class="line">        &#125;);  </div><div class="line">    &#125;  </div><div class="line">&#125;  </div><div class="line">------------------  </div><div class="line">Output：  </div><div class="line">大雁能够飞 <span class="number">10000</span>米</div></pre></td></tr></table></figure></p>
+<p>在Test类中，test()方法接受一个Bird类型的参数，同时我们知道一个抽象类是没有办法直接new的，我们必须要先有实现类才能new出来它的实现类实例。所以在mian方法中直接使用匿名内部类来创建一个Bird实例。<br>由于匿名内部类不能是抽象类，所以它必须要实现它的抽象父类或者接口里面所有的抽象方法。<br>对于这段匿名内部类代码其实是可以拆分为如下形式：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WildGoose</span> <span class="keyword">extends</span> <span class="title">Bird</span></span>&#123;  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">fly</span><span class="params">()</span> </span>&#123;  </div><div class="line">        <span class="keyword">return</span> <span class="number">10000</span>;  </div><div class="line">    &#125;  </div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;  </div><div class="line">        <span class="keyword">return</span> <span class="string">"大雁"</span>;  </div><div class="line">    &#125;  </div><div class="line">&#125;  </div><div class="line"></div><div class="line">WildGoose wildGoose = <span class="keyword">new</span> WildGoose();  </div><div class="line">test.test(wildGoose);</div></pre></td></tr></table></figure></p>
+<p>在这里系统会创建一个继承自Bird类的匿名类的对象，该对象转型为对Bird类型的引用。<br>对于匿名内部类的使用它是存在一个缺陷的，就是它仅能被使用一次，创建匿名内部类时它会立即创建一个该类的实例，该类的定义会立即消失，所以匿名内部类是不能够被重复使用。对于上面的实例，如果我们需要对test()方法里面内部类进行多次使用，建议重新定义类，而不是使用匿名内部类。</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>在使用匿名内部类的过程中，我们需要注意如下几点：</p>
+<pre><code>1、使用匿名内部类时，我们必须是继承一个类或者实现一个接口，但是两者不可兼得，同时也只能继承一个类或者实现一个接口。
+2、匿名内部类中是不能定义构造函数的。
+3、匿名内部类中不能存在任何的静态成员变量和静态方法。
+4、匿名内部类为局部内部类，所以局部内部类的所有限制同样对匿名内部类生效。
+5、匿名内部类不能是抽象的，它必须要实现继承的类或者实现的接口的所有抽象方法。
+</code></pre><h2 id="使用的形参为何要为final"><a href="#使用的形参为何要为final" class="headerlink" title="使用的形参为何要为final"></a>使用的形参为何要为final</h2><p>参考文件：<a href="http://android.blog.51cto.com/268543/384844" target="_blank" rel="external">http://android.blog.51cto.com/268543/384844</a><br>我们给匿名内部类传递参数的时候，若该形参在内部类中需要被使用，那么该形参必须要为final。也就是说：<strong>当所在的方法的形参需要被内部类里面使用时，该形参必须为final</strong>。</p>
+<p>为什么必须要为final呢？<br>首先我们知道在内部类编译成功后，它会产生一个class文件，该class文件与外部类并不是同一class文件，仅仅只保留对外部类的引用。当外部类传入的参数需要被内部类调用时，从java程序的角度来看是直接被调用：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OuterClass</span> </span>&#123;  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">(<span class="keyword">final</span> String name,String age)</span></span>&#123;  </div><div class="line">        <span class="class"><span class="keyword">class</span> <span class="title">InnerClass</span></span>&#123;  </div><div class="line">            <span class="function"><span class="keyword">void</span> <span class="title">display</span><span class="params">()</span></span>&#123;  </div><div class="line">                System.out.println(name);  </div><div class="line">            &#125;  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>从上面代码中看好像name参数应该是被内部类直接调用？其实不然，在java编译之后实际的操作如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OuterClass</span>$<span class="title">InnerClass</span> </span>&#123;  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">InnerClass</span><span class="params">(String name,String age)</span></span>&#123;  </div><div class="line">        <span class="keyword">this</span>.InnerClass$name = name;  </div><div class="line">        <span class="keyword">this</span>.InnerClass$age = age;  </div><div class="line">    &#125;  </div><div class="line">    </div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">()</span></span>&#123;  </div><div class="line">        System.out.println(<span class="keyword">this</span>.InnerClass$name + <span class="string">"----"</span> + <span class="keyword">this</span>.InnerClass$age );  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>所以从上面代码来看，内部类并不是直接调用方法传递的参数，而是利用自身的构造器对传入的参数进行备份，自己内部方法调用的实际上时自己的属性而不是外部方法传递进来的参数。<br>直到这里还没有解释为什么是final？在内部类中的属性和外部方法的参数两者从外表上看是同一个东西，但实际上却不是，所以他们两者是可以任意变化的，也就是说在内部类中我对属性的改变并不会影响到外部的形参，而然这从程序员的角度来看这是不可行的，毕竟站在程序的角度来看这两个根本就是同一个，如果内部类该变了，而外部方法的形参却没有改变这是难以理解和不可接受的，所以为了保持参数的一致性，就规定使用final来避免形参的不改变。</p>
+<p><font color="#3366ff"><strong>简单理解就是，拷贝引用，为了避免引用值发生改变，例如被外部类的方法修改等，而导致内部类得到的值不一致，于是用final来让该引用不可改变。故如果定义了一个匿名内部类，并且希望它使用一个其外部定义的参数，那么编译器会要求该参数引用是final的</strong></font>。</p>
+<h2 id="匿名内部类初始化"><a href="#匿名内部类初始化" class="headerlink" title="匿名内部类初始化"></a>匿名内部类初始化</h2><p>我们一般都是利用构造器来完成某个实例的<code>初始化</code>工作的，但是匿名内部类是没有构造器的！那怎么来初始化匿名内部类呢？使用构造代码块！利用构造代码块能够达到为匿名内部类创建一个构造器的效果。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OutClass</span> </span>&#123;  </div><div class="line">    <span class="function"><span class="keyword">public</span> InnerClass <span class="title">getInnerClass</span><span class="params">(<span class="keyword">final</span> <span class="keyword">int</span> age,<span class="keyword">final</span> String name)</span></span>&#123;  </div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> InnerClass() &#123;  </div><div class="line">            <span class="keyword">int</span> age_ ;  </div><div class="line">            String name_;  </div><div class="line">            <span class="comment">//构造代码块完成初始化工作  </span></div><div class="line">            &#123;  </div><div class="line">                <span class="keyword">if</span>(<span class="number">0</span> &lt; age &amp;&amp; age &lt; <span class="number">200</span>)&#123;  </div><div class="line">                    age_ = age;  </div><div class="line">                    name_ = name;  </div><div class="line">                &#125;  </div><div class="line">            &#125;  </div><div class="line">            <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;  </div><div class="line">                <span class="keyword">return</span> name_;  </div><div class="line">            &#125;  </div><div class="line">            </div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;  </div><div class="line">                <span class="keyword">return</span> age_;  </div><div class="line">            &#125;  </div><div class="line">        &#125;;  </div><div class="line">    &#125;  </div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </div><div class="line">        OutClass out = <span class="keyword">new</span> OutClass();  </div><div class="line">        </div><div class="line">        InnerClass inner_1 = out.getInnerClass(<span class="number">201</span>, <span class="string">"chenssy"</span>);  </div><div class="line">        System.out.println(inner_1.getName());  </div><div class="line">        </div><div class="line">        InnerClass inner_2 = out.getInnerClass(<span class="number">23</span>, <span class="string">"chenssy"</span>);  </div><div class="line">        System.out.println(inner_2.getName());  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -493,6 +541,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/转载/" rel="tag"># 转载</a>
+          
+        </div>
+      
 
       
       
@@ -502,8 +558,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/23/java-toup9/" rel="next" title="java-toup9">
-                <i class="fa fa-chevron-left"></i> java-toup9
+              <a href="/2017/10/23/java-toup9/" rel="next" title="java提高篇（八）-----实现多重继承">
+                <i class="fa fa-chevron-left"></i> java提高篇（八）-----实现多重继承
               </a>
             
           </div>
@@ -511,6 +567,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/23/java-toup11/" rel="prev" title="java提高篇（十）-----强制类型转换">
+                java提高篇（十）-----强制类型转换 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -571,8 +631,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -591,7 +660,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -665,6 +734,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用匿名内部类内部类"><span class="nav-number">1.</span> <span class="nav-text">使用匿名内部类内部类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">2.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用的形参为何要为final"><span class="nav-number">3.</span> <span class="nav-text">使用的形参为何要为final</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#匿名内部类初始化"><span class="nav-number">4.</span> <span class="nav-text">匿名内部类初始化</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
