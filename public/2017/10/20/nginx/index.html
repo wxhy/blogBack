@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.3">
+
+
+
+
+
+
+  <meta name="keywords" content="前端,nginx," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Carlos的个人博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Nginx那么好，我想去看看。接连逛了两个书城后，我发现并没有Nginx相关的书籍。这就很奇怪！  Nginx，一名网红（网络服务器红人…)，就算没有自传和回忆录，争着介绍它的花边新闻也该有吧。 后来找到仅有的一两本书籍，也直接深入到“源码剖析”的阶段。写得并不十分满意，况且我还不需要这些。后来发现了原因，大概是因为“使用太简单了，都不值得出书“。是的，Nginx把纷繁复杂的功能，浓缩成一份简单的">
+<meta name="keywords" content="前端,nginx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nginx能为前端开发带来什么？">
+<meta property="og:url" content="http://yoursite.com/2017/10/20/nginx/index.html">
+<meta property="og:site_name" content="Carlos的个人博客">
+<meta property="og:description" content="Nginx那么好，我想去看看。接连逛了两个书城后，我发现并没有Nginx相关的书籍。这就很奇怪！  Nginx，一名网红（网络服务器红人…)，就算没有自传和回忆录，争着介绍它的花边新闻也该有吧。 后来找到仅有的一两本书籍，也直接深入到“源码剖析”的阶段。写得并不十分满意，况且我还不需要这些。后来发现了原因，大概是因为“使用太简单了，都不值得出书“。是的，Nginx把纷繁复杂的功能，浓缩成一份简单的">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/uploads/nginx0.jpg">
+<meta property="og:image" content="http://yoursite.com/uploads/nginx1.jpg">
+<meta property="og:image" content="http://yoursite.com/uploads/nginx2.jpg">
+<meta property="og:updated_time" content="2017-10-20T06:17:24.941Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Nginx能为前端开发带来什么？">
+<meta name="twitter:description" content="Nginx那么好，我想去看看。接连逛了两个书城后，我发现并没有Nginx相关的书籍。这就很奇怪！  Nginx，一名网红（网络服务器红人…)，就算没有自传和回忆录，争着介绍它的花边新闻也该有吧。 后来找到仅有的一两本书籍，也直接深入到“源码剖析”的阶段。写得并不十分满意，况且我还不需要这些。后来发现了原因，大概是因为“使用太简单了，都不值得出书“。是的，Nginx把纷繁复杂的功能，浓缩成一份简单的">
+<meta name="twitter:image" content="http://yoursite.com/uploads/nginx0.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'QiuHongYun'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/20/nginx/"/>
+
+
+
+
+
+  <title>Nginx能为前端开发带来什么？ | Carlos的个人博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Carlos的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不厌其烦  周而复始</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/20/nginx/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Carlos">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Carlos的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Nginx能为前端开发带来什么？</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-20T10:12:22+08:00">
+                2017-10-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/转载/" itemprop="url" rel="index">
+                    <span itemprop="name">-转载</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/20/nginx/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2017/10/20/nginx/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,208 字
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Nginx那么好，我想去看看。<br>接连逛了两个书城后，我发现并没有Nginx相关的书籍。<br>这就很奇怪！</p>
+<p><img src="/uploads/nginx0.jpg" alt=""></p>
+<p>Nginx，一名<strong>网红</strong>（网络服务器红人…)，就算没有自传和回忆录，争着介绍它的花边新闻也该有吧。</p>
+<p>后来找到仅有的一两本书籍，也直接深入到“源码剖析”的阶段。写得并不十分满意，况且我还不需要这些。<br>后来发现了原因，大概是因为“<strong>使用太简单了，都不值得出书</strong>“。<br>是的，Nginx把纷繁复杂的功能，浓缩成一份简单的配置，极易上手。<br>当它呈现到你面前时，感觉独具匠心。<br><a id="more"></a></p>
+<h3 id="Nginx与NodeJs"><a href="#Nginx与NodeJs" class="headerlink" title="Nginx与NodeJs"></a>Nginx与NodeJs</h3><p>（这里的标题有点歧义。此处的NodeJs，皆引申为NodeJs所搭建的服务器。）</p>
+<p>有人说，作为一名前端，<strong>我的真爱是NodeJs</strong>。<br>同时也认同，抛去性能之类的比较，单纯从实现的角度，NodeJs编写的服务器也能实现Nginx的各种功能。</p>
+<p>这些我都赞成，但使用Nginx并不意味着抛弃NodeJs。事实上，它们并不冲突，还可以在一起愉快的玩耍。</p>
+<p>在业内，这样的模型已很常见：资源转发，反向代理，静态资源处理，负载均衡，这些事情扔给Nginx来处理，只是几行配置的事情；同时在上游，让NodeJs去处理它最擅长的I/O等事情。</p>
+<p>合理分配各自擅长的事情，这样的思路，同样可以运用于前端开发中。</p>
+<p>以前用NodeJs几百行实现的服务器功能，在npm与github的海洋里花尽心思去寻找的模块，也许在Nginx里是一条成熟的配置。它能帮其分担很多事情，节约了成本。</p>
+<h3 id="场景一：环境切换"><a href="#场景一：环境切换" class="headerlink" title="场景一：环境切换"></a>场景一：环境切换</h3><p>前端开发中，经常面临多个部署环境切换的问题。<br>我们通常用配hosts的方式去实现。更优化些，我们将机器的服务绑定了不同的域名：比如正式环境是a.qq.com，测试环境是test.a.qq.com。</p>
+<p>然而在拓展性和易用性方面，还不足够好。<br>而Nginx作为反向代理，就很容易处理资源转发的问题。</p>
+<p>思路很简单：</p>
+<blockquote>
+<p>1.读取请求里的cookie，如果键名host_id有值，则代理到这个IP地址；<br>2.如果没有，则代理到默认的正式环境（此处举例为1.1.1.1）;</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">set $env_id <span class="string">"1.1.1.1"</span>;</div><div class="line"><span class="keyword">if</span> ( $http_cookie ~* <span class="string">"host_id=(\S+)(;.*|$)"</span>) &#123;</div><div class="line">    set $env_id $<span class="number">1</span>;</div><div class="line">&#125;</div><div class="line">location / &#123;</div><div class="line">    proxy_set_header Host $host;</div><div class="line">    proxy_pass   http:<span class="comment">//$env_id:80;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPosupplier</span><span class="params">(String opacct)</span> <span class="keyword">throws</span> TException </span>&#123;</div><div class="line">			</div><div class="line">	String qrystr = <span class="string">" e.cfgsct ='posper' and e.cfgval ='"</span>+opacct+<span class="string">"'"</span>;</div><div class="line">	List&lt;Appcfg&gt; appcfgs = <span class="keyword">this</span>.jdsdb.APPCFG().list(qrystr);</div><div class="line">	<span class="keyword">if</span>(appcfgs == <span class="keyword">null</span> || appcfgs.size()&lt;=<span class="number">0</span>)&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>那接下来的事情，<strong>就是怎样用最简便的方式，把IP种在cookie里</strong>？<br>我们应用了nginx-http-footer-filter模块，html文件经过代理时，都注入了一小段js代码。</p>
+<p>这段代码，会帮我们展示小菜单，点击某个环境时，则将IP种到cookie里，同时刷新页面，让Nginx完成环境切换。<br><img src="/uploads/nginx1.jpg" alt=""></p>
+<p>切换环境，如今只需点击一次。</p>
+<h3 id="场景二：SourceMap"><a href="#场景二：SourceMap" class="headerlink" title="场景二：SourceMap"></a>场景二：SourceMap</h3><p>在线上环境调试Js代码是件麻烦的事情，因为目前合格的前端部署，代码都应经过压缩。性能问题是优化了，debug可不怎么方便。</p>
+<p>而SourceMap正好可以解决此问题。</p>
+<p>在最新的各版本浏览器里，如果满足：</p>
+<ol>
+<li>压缩后的js文件后面有 <code>//# sourceMappingURL=xxx.map</code>格式的注释<br>2.浏览器能正常访问到sourceMappingURL<br>那么，就能把压缩过的代码还原。<br>要实现这样的功能，就必须：</li>
+</ol>
+<p>1.现网环境不带以上形式的注释，同时访问不到sourceMap（安全性考虑）<br>2.测试环境带注释，能访问sourceMap</p>
+<p>这样的模型，用<code>反向代理+内容篡改</code>的思路再合适不过。<br>每次构建编译时，我们会把sourceMap文件存放到一台机器（举例为1.1.1.1），命名为js文件名后加<code>.map后缀</code>。随后，使用Nginx，通过这几行配置就能把此功能实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">location  ~ \.js$&#123;</div><div class="line">    footer &quot;\n//# sourceMappingURL=$request_uri.map&quot;;</div><div class="line">    footer_types &quot;*&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>只要经过代理，在chrome里，我们能看到每份被压缩过的js文件，都有一个对应的源码文件。<br>你可以直接使用它来做打断点之类的操作，大大的提升了调试质量。<br><img src="/uploads/nginx2.jpg" alt=""></p>
+<h3 id="场景三：内容纂改"><a href="#场景三：内容纂改" class="headerlink" title="场景三：内容纂改"></a>场景三：内容纂改</h3><p>其实在以上两个场景里，都涉及了“内容纂改”。<br>无论是说“纂改”还是“劫持”，大家的印象都不是什么好事情，但另一方面，他们又可以让事情有趣起来。</p>
+<p>统一介绍下，Nginx涉及纂改的模块有：</p>
+<ul>
+<li><a href="https://m.oschina.net/blog/156826" target="_blank" rel="external">nginx_http_footer_filter</a>:往文件的底部添加文字，可包含Nginx的内置变量；</li>
+<li><a href="http://nginx.org/en/docs/http/ngx_http_addition_module.html" target="_blank" rel="external">nginx_http_addition_module</a>：从一个url去读取内容，将之添加到文件的头部或顶部；</li>
+<li><a href="http://nginx.org/en/docs/http/ngx_http_sub_module.html" target="_blank" rel="external">nginx_http_sub_module</a>：替换字符</li>
+</ul>
+<p>除去上面两种场景，合理运用这些模块对应的配置，可以做出许多小工具，这是很有想象力的事情。<br>单单针对移动web前端开发，就可以实现：</p>
+<blockquote>
+<ol>
+<li>将<a href="http://people.apache.org/~pmuellr/weinre-docs/latest/" target="_blank" rel="external">weinre</a>脚本插入到html里，让移动web调试更加便捷。</li>
+<li>移动web经常用到localStorage优化首屏，但debug时又会受到干扰，通过一个按钮很方便的清除本地缓存。</li>
+<li>手机APP内嵌页面，很难将其网址分享给另一个人。通过一个按钮就能生成url对应的二维码等</li>
+</ol>
+</blockquote>
+<h3 id="场景四：本地映射"><a href="#场景四：本地映射" class="headerlink" title="场景四：本地映射"></a>场景四：本地映射</h3><p>在Windows下的前端抓包调试，Fiddler+Willow的能力毋庸置疑。<br>而脱离了.NET体系的Linux和Mac，即使有一些代替工具，但某些方面还是略显不足。   </p>
+<p>比如：<strong>线上接口映射到本地文件</strong>。<br>想到Fiddler的本质也是一个代理，而开启一个有这样能力的Nginx服务，并不是太难的事情。           </p>
+<p>而且，我们可以做得更灵活，比如：</p>
+<ul>
+<li>同时支持慢速调试</li>
+<li>同时支持目录层级映射</li>
+<li>同时支持正则匹配</li>
+<li>JSON返回的数据有可能是变化的（比如分页时候），同时支持动态数据</li>
+</ul>
+<p>这些场景，只运用到Nginx里的“<a href="http://www.linuxidc.com/Linux/2014-01/95493.htm" target="_blank" rel="external">rewrite规则</a>”。<br>从参考的文档可以大致看到，rewrite规则非常灵活，能完成各种场景的转发。 </p>
+<p>最简单的模型中，我们把所有带<code>cgi-bin</code>路径的请求，rewite到本地的一个服务，同时带上请求的所有参数，<br>仅需这三行配置即可：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">location ~ /cgi-bin/* &#123;</div><div class="line">    rewrite ^(.*)$ http://127.0.0.1:8080/cgi-bin/ last;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>后续的事情，可以在本地创建一个cgi-bin文件夹，在里面放置需要映射的文本，并开启服务到8080端口即可。 </p>
+<h3 id="场景五：移动侧调试"><a href="#场景五：移动侧调试" class="headerlink" title="场景五：移动侧调试"></a>场景五：移动侧调试</h3><p><code>Fiddler</code> 有一个勾选项 <code>Allow remote computers to connect</code>，并可以指定 <code>listen port</code> 可以使得手机/其它终端通过将本机设为代理而访问本机环境，与 <code>hosts</code> 配合会很实用。</p>
+<p>这个功能，用Nginx也很容易做到。<br>通过 <code>default_server</code> 作为代理，手机终端通过设置网络代理为本机IP和相应的 <code>listen port</code>，从而可以访问本机的 Web 服务。</p>
+<p>其中也是用到了<a href="http://nginx.org/en/docs/http/ngx_http_proxy_module.html" target="_blank" rel="external">ngx_http_proxy_module</a>模块的配置：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"> server &#123;</div><div class="line">    listen  <span class="number">80</span> default_server;</div><div class="line">    server_name  localhost;</div><div class="line">    resolver <span class="number">8.8</span><span class="number">.8</span><span class="number">.8</span>;</div><div class="line">    location / &#123;</div><div class="line">        proxy_set_header Host $host;</div><div class="line">        proxy_set_header X-Real-Ip $remote_addr;</div><div class="line">        proxy_set_header X-Forwarded-For $remote_addr;</div><div class="line">        proxy_pass http:<span class="comment">//$host;</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">server &#123;</div><div class="line">    listen  <span class="number">80</span>;</div><div class="line">    server_name  ke.qq.com;</div><div class="line">    location / &#123;</div><div class="line">        proxy_set_header Host $host;</div><div class="line">        proxy_set_header X-Real-Ip $remote_addr;</div><div class="line">        proxy_set_header X-Forwarded-For $remote_addr;</div><div class="line">        proxy_pass http:<span class="comment">//127.0.0.1:9091/;</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="边角料"><a href="#边角料" class="headerlink" title="边角料"></a>边角料</h3><p>除去特定场景，Nginx的一些配置也跟前端息息相关。以下简单罗列，作为边角材料。</p>
+<p>1.<a href="https://github.com/alibaba/nginx-http-concat" target="_blank" rel="external">nginx_http_concat</a><br>资源合并，处理CDN combo。例如通过这样的方式<code>http://example.com/??style1.css,style2.css,foo/style3.css</code>访问合并后的资源。</p>
+<p>2.<a href="http://nginx.org/en/docs/http/ngx_http_image_filter_module.html" target="_blank" rel="external">ngx_http_image_filter_module</a><br>图片处理。提供图片缩放，jpg压缩，旋转等特性。</p>
+<p>3.适配PC与移动web<br>总体可运用<a href="http://nginx.org/en/docs/http/ngx_http_proxy_module.html" target="_blank" rel="external">ngx_http_proxy_module</a>，去实现路径转发。判断平台类型的Nginx配置，在开源项目<a href="http://detectmobilebrowsers.com/" target="_blank" rel="external">detectmobilebrowsers</a>中可以找到。</p>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>学习Nginx，我本身只是出于开开眼界的目的。而的确发现了一些很有启发性的特质。<br>于前端开发，无论线上线下，熟练掌握基本配置，可以做出许多提高效率的工具。<br><strong>但既然是工具，熟手就好</strong>。 </p>
+<p>比如Fiddler直观，但Nginx更底层，更灵活，应当按照实际选择即可。</p>
+<p>话说回来，后来心情有些惆怅。<br>想起之前，我用NodeJs写过一个八百行的本地调试服务，如今更习惯用Nginx的几行配置。<br>不过我又想，<strong>既然我已经花了时间去写，为什么还要花时间去用？！</strong> </p>
+<p>心情又好起来了。（等等有什么不对，管它呢…）</p>
+<hr>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat-reward-image.png" alt="Carlos 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay-reward-image.png" alt="Carlos 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+            <a href="/tags/nginx/" rel="tag"># nginx</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/20/xuedinge/" rel="next" title="薛定谔的年 1.1 -1.7">
+                <i class="fa fa-chevron-left"></i> 薛定谔的年 1.1 -1.7
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/20/java-toup1/" rel="prev" title="java提高篇-----详解java的四舍五入与保留位">
+                java提高篇-----详解java的四舍五入与保留位 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.jpg"
+                alt="Carlos" />
+            
+              <p class="site-author-name" itemprop="name">Carlos</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/itqhy" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/your-user-name" target="_blank" title="Weibo">
+                    
+                      <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://douban.com/people/your-user-name" target="_blank" title="douban">
+                    
+                      <i class="fa fa-fw fa-globe"></i>douban</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Nginx与NodeJs"><span class="nav-number">1.</span> <span class="nav-text">Nginx与NodeJs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景一：环境切换"><span class="nav-number">2.</span> <span class="nav-text">场景一：环境切换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景二：SourceMap"><span class="nav-number">3.</span> <span class="nav-text">场景二：SourceMap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景三：内容纂改"><span class="nav-number">4.</span> <span class="nav-text">场景三：内容纂改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景四：本地映射"><span class="nav-number">5.</span> <span class="nav-text">场景四：本地映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景五：移动侧调试"><span class="nav-number">6.</span> <span class="nav-text">场景五：移动侧调试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#边角料"><span class="nav-number">7.</span> <span class="nav-text">边角料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后记"><span class="nav-number">8.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-leaf"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Carlos</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'itqhy',
+            repo: 'itqhy.github.io',
+            
+            lang: "zh-Hans" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '202070f86fcf30b8b113d7c12d71e5e289082b3e',
+            
+                client_id: '97f2c83cc55682310709'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
