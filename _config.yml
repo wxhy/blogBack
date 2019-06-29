@@ -5,9 +5,10 @@
 # Site
 title: Carlos的个人博客
 subtitle: 不厌其烦  周而复始
-description: 
+description:
+keywords:
 author: Carlos
-language: zh-Hans
+language: zh-CN
 timezone:
 
 # URL
@@ -37,12 +38,12 @@ filename_case: 0
 render_drafts: false
 post_asset_folder: false
 relative_link: false
-#future: true
+future: true
 highlight:
   enable: true
   line_number: true
   auto_detect: false
-  tab_replace: ''
+  tab_replace:
   
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -72,14 +73,6 @@ pagination_dir: page
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
-Plugins: hexo-generator-baidu-sitemap
-         hexo-generator-sitemap
-baidusitemap: 
-        path: baidusitemap.xml
-sitemap: 
-        path: sitemap.xml
-
-
 ## Themes: https://hexo.io/themes/
 theme: next
 
@@ -99,9 +92,14 @@ social:
 
 #本地搜索
 search:
-    path: search.xml
-    field: post
-    format: html
-    limit: 10000
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
 
-
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
+  exclude_codeblock: false
