@@ -2,7 +2,7 @@
 title: Nginx能为前端开发带来什么？
 date: 2017-10-20 10:12:22
 tags: [前端,nginx]
-categories: -转载
+categories: 转载
 ---
 
 Nginx那么好，我想去看看。

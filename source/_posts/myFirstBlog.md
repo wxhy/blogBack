@@ -2,7 +2,7 @@
 title: 记“刺客信条”三部曲：水月镜像，无心去来
 date: 2017-10-19 22:40:46
 tags: [游戏, 旧事]
-categories: -转载
+categories: 转载
 comments: true 
 brief: "第一次有冲动为一个游戏写文字"
 ---
