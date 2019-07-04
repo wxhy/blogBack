@@ -11,6 +11,7 @@ Vector可以实现可增长的对象数组。与数组一样，它包含可以�
 Vector实现List接口，继承AbstractList类，所以我们可以将其看做队列，支持相关的添加、删除、修改、遍历等功能。
 Vector实现RandmoAccess接口，即提供了随机访问功能，提供提供快速访问功能。在Vector我们可以直接访问元素。
 Vector 实现了Cloneable接口，支持clone()方法，可以被克隆。
+<!-- more -->
 ```java
     public class Vector<E>  
         extends AbstractList<E>  
@@ -56,7 +57,6 @@ Vector提供了四个构造函数：
         this.capacityIncrement = capacityIncrement;  
     }  
 ```
-<!--   more -->
 在成员变量方面，Vector提供了elementData , elementCount， capacityIncrement三个成员变量。其中
 elementData ："Object[]类型的数组"，它保存了Vector中的元素。按照Vector的设计elementData为一个动态数组，可以随着元素的增加而动态的增长，其具体的增加方式后面提到（ensureCapacity方法）。如果在初始化Vector时没有指定容器大小，则使用默认大小为10.
 elementCount：Vector 对象中的有效组件数。

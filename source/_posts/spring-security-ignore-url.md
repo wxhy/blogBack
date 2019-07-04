@@ -23,7 +23,7 @@ public class WebSecurityConfigurer extends ResourceServerConfigurerAdapter {
 
 多个项目时，为了方便配置，现在将配置从Java Config中提取yml中。
 主要原理是借用 ImportBeanDefinitionRegistrar 接口实现动态注入 ResourceServerConfigurerAdapter
-
+<!-- more -->
 
 ## **获取需要拦截的URL**
 

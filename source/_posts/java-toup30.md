@@ -20,7 +20,7 @@ Stack通过五个操作对Vector进行扩展，允许将向量视为堆栈。这
 |push(E item)               |把项压入堆栈顶部。|
 |search(Object o)           |返回对象在堆栈中的位置，以 1 为基数。|
 
-
+<!-- more -->
 
 Stack继承Vector，他对Vector进行了简单的扩展：
 ```java

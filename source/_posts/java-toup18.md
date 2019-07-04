@@ -12,6 +12,8 @@ categories: java开发
 但是这只是数组的最表面的东西！深一点？就是这样：数组是一个简单的复合数据类型，它是一系列有序数据的集合，它当中的每一个数据都具有相同的数据类型，我们通过数组名加上一个不会越界下标值来唯一确定数组中的元素。
 还有更深的，那就是数组是一个特殊的对象！！（对于这个LZ理解的不是很好，对JVM也没有看，所以见解有限）。以下参考文献：http://developer.51cto.com/art/201001/176671.htm 、 http://www.blogjava.net/flysky19/articles/92763.html?opt=admin
 不管在其他语言中数组是什么，在java中它就是对象。一个比较特殊的对象。
+<!-- more -->
+
 ```java
 public class Test {  
     public static void main(String[] args) {  
