@@ -107,3 +107,7 @@ symbols_count_time:
 # sitemap
 baidusitemap:
   path: sitemap.xml
+
+# Hexo-admin
+admin:
+  deployCommand: './command/deploy.bat'
