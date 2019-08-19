@@ -1,14 +1,10 @@
 title: mysql主从同步配置
-tags: []
-categories: []
+tags:
+  - Mysql
+categories:
+  - Mysql
 date: 2019-08-19 14:07:00
 ---
--- Mysql主从同步配置
-date: 2017-10-24 13:10:01
-tags: [Mysql]
-categories: Mysql
----
-
 mysql主从同步主要基于日志（binlog）的主从复制方式
 
 
