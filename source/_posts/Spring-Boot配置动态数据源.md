@@ -6,7 +6,7 @@ categories:
   - Spring Boot
 date: 2019-08-20 17:29:00
 ---
-## 数据源配置
+数据源配置
 
 ```java
 ## 数据库连接池
@@ -64,13 +64,13 @@ public enum DataSourceContants {
 @UtilityClass
 public class DynamicDataSourceContextHolder {
 
-    private static final ThreadLocal<DataSourceContants> CONTEXT_HOLDER = new ThreadLocal<>();
+    private static final ThreadLocal<String> CONTEXT_HOLDER = new ThreadLocal<>();
 
-    public static void add(DataSourceContants dataSourceContants) {
-        CONTEXT_HOLDER.set(dataSourceContants);
+    public static void add(String dataSourceName) {
+        CONTEXT_HOLDER.set(dataSourceName);
     }
 
-    public static DataSourceContants get() {
+    public static String get() {
         return CONTEXT_HOLDER.get();
     }
 
@@ -88,8 +88,8 @@ public class DynamicDataSource extends AbstractRoutingDataSource {
 
     @Override
     protected Object determineCurrentLookupKey() {
-             DataSourceContants dataSourceContants = DynamicDataSourceContextHolder.get();
-        logger.info("当前数据源是：" + dataSourceContants.getDescription());
+        String dataSourceName = DynamicDataSourceContextHolder.get();
+        logger.info("当前数据源是：" + dataSourceName);
         return DynamicDataSourceContextHolder.get();
     }
 }
@@ -131,8 +131,8 @@ public class DynamicDataSourceAutoConfiguration{
     @Bean
     @Primary
     public DataSource dynamicDataSource() {
-        dataSourceMap.put(DataSourceContants.MASTER, masterDataSource());
-        dataSourceMap.put(DataSourceContants.SLAVE, slaveDataSource());
+        dataSourceMap.put(DataSourceContants.MASTER.getValue(), masterDataSource());
+        dataSourceMap.put(DataSourceContants.SLAVE.getValue(), slaveDataSource());
         DynamicDataSource dynamicDataSource = new DynamicDataSource();
         dynamicDataSource.setDefaultTargetDataSource(masterDataSource());
         dynamicDataSource.setTargetDataSources(dataSourceMap);
@@ -160,7 +160,9 @@ public class MasterSlaveAutoRoutingPlugin implements Interceptor {
         Object[] args = invocation.getArgs();
         MappedStatement ms = (MappedStatement) args[0];
         try {
-            DynamicDataSourceContextHolder.add(ms.getSqlCommandType().equals(SqlCommandType.SELECT) ? DataSourceContants.SLAVE : DataSourceContants.MASTER);
+            DynamicDataSourceContextHolder.add(ms.getSqlCommandType().equals(SqlCommandType.SELECT) 
+            ? DataSourceContants.SLAVE.getValue()
+            : DataSourceContants.MASTER.getValue());
             return invocation.proceed();
         } finally {
             DynamicDataSourceContextHolder.clear();
