@@ -15,13 +15,13 @@ spring:
     master:
       driver-class-name: com.mysql.cj.jdbc.Driver
       jdbc-url: jdbc:mysql://192.168.1.117:3306/boot
-      username: ENC(y0MVSykTX0iVSqMpaGusFA==)
-      password: ENC(VMgWiFR16g8bFGkUo0oZ9A==)
+      username: root
+      password: 123456
     slave:
       driver-class-name: com.mysql.cj.jdbc.Driver
       jdbc-url: jdbc:mysql://192.168.1.118:3306/boot
-      username: ENC(y0MVSykTX0iVSqMpaGusFA==)
-      password: ENC(TNa/fF1g0RJ39k80QKSQLPpAr1E8oqPZ)
+      username: root
+      password: 123456
 
 ```
 
