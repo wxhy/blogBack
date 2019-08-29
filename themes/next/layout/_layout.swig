@@ -122,5 +122,7 @@
   {% include '_third-party/copy-code.swig' %}
   {% include '_third-party/chatra.swig' %}
   {% include '_third-party/tidio.swig' %}
+
+  {{ live2d() }}
 </body>
 </html>

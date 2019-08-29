@@ -111,3 +111,5 @@ baidusitemap:
 # Hexo-admin
 admin:
   deployCommand: './command/deploy.bat'
+
+
