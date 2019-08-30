@@ -1,9 +1,10 @@
----
 title: 薛定谔的年 1.1 -1.7
-date: 2017-10-20 09:50:18
 tags: 旧事
 categories: 转载
+date: 2017-10-20 09:50:18
 ---
+> 转载： http://litten.me/2017/01/08/diary-2017-0101-0107/
+
 
 ![](/uploads/diary-18.jpg)
 

@@ -1,11 +1,15 @@
----
 title: 记“刺客信条”三部曲：水月镜像，无心去来
-date: 2017-10-19 22:40:46
-tags: [游戏, 旧事]
-categories: 转载
-comments: true 
-brief: "第一次有冲动为一个游戏写文字"
+tags:
+  - 游戏
+  - 旧事
+categories:
+  - 转载
+comments: true
+brief: 第一次有冲动为一个游戏写文字
+date: 2017-10-19 22:40:00
 ---
+> 转载： http://litten.me/2012/12/18/assassins-creed/
+
 ![刺客信条-兄弟会海报](/uploads/ckxt0.jpg)
 > Nothing is true,everything is permitted. 万事皆虚，万物皆允。
 
@@ -62,6 +66,4 @@ Ezio最后的信：
 > endless affection，mio Sofia,                   
 > 至死不渝的挚爱， 我的索菲亚                   
 > Forever yours, Ezio Auditore                   
-> 永远属于你的， Ezio Auditore        
-
-
+> 永远属于你的， Ezio Auditore

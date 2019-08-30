@@ -1,9 +1,12 @@
----
 title: Nginx能为前端开发带来什么？
-date: 2017-10-20 10:12:22
-tags: [前端,nginx]
+tags:
+  - 前端
+  - nginx
 categories: 转载
+date: 2017-10-20 10:12:22
 ---
+> 转载： http://litten.me/2015/11/03/nginx-in-fe/
+
 
 Nginx那么好，我想去看看。
 接连逛了两个书城后，我发现并没有Nginx相关的书籍。
