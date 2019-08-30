@@ -122,5 +122,10 @@
   {% include '_third-party/copy-code.swig' %}
   {% include '_third-party/chatra.swig' %}
   {% include '_third-party/tidio.swig' %}
+
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+  <div id="aplayer"></div>
+  <script type="text/javascript" src="/dist/APlayer.min.js"></script>
+  <script type="text/javascript" src="/dist/music.js"></script>
 </body>
 </html>
