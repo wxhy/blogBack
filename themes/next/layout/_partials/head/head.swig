@@ -129,5 +129,3 @@
   daovoice('update');
   </script>
 {% endif %}
-<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
