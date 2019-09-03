@@ -1,8 +1,10 @@
 ---
 title: 提问的智慧
-date: 2017-10-24 13:10:31
-tags: [随笔]
+tags:
+  - 随笔
 categories: 转载
+abbrlink: fb3832f5
+date: 2017-10-24 13:10:31
 ---
 
 # 提问的智慧

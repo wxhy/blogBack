@@ -1,3 +1,4 @@
+---
 title: LeetCode - 两数之合
 author: Carlos
 tags:
@@ -5,6 +6,7 @@ tags:
   - 哈希
 categories:
   - LettCode
+abbrlink: 7bc80c4f
 date: 2019-09-02 10:06:00
 ---
 ## 题目描述

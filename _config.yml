@@ -15,7 +15,7 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://itqhy.github.io
 root: /
-permalink: :year/:month/:day/:title/
+permalink: post/:abbrlink.html 
 permalink_defaults:
 favicon: /uploads/favicon.ico
 
@@ -113,20 +113,31 @@ admin:
   deployCommand: './command/deploy.bat'
 
 
+## 
+abbrlink:
+	alg: crc32   #算法： crc16(default) and crc32
+	rep: hex     #进制： dec(default) and hex
 
-live2d:
+
+# hexo-neat
+# 博文压缩
+neat_enable: true
+# 压缩html
+neat_html:
   enable: true
-  scriptFrom: local
-  pluginRootPath: live2dw/
-  pluginJsPath: lib/
-  pluginModelPath: assets/
-  tagMode: false
-  debug: false
-  model:
-    use: poi
-  display:
-    position: left
-    width: 300
-    height: 300
-  mobile:
-    show: true
+  exclude:
+# 压缩css  
+neat_css:
+  enable: true
+  exclude:
+    - '**/*.min.css'
+# 压缩js
+neat_js:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '**/*.min.js'
+    - '**/jquery.fancybox.pack.js'
+    - '**/index.js'  

@@ -1,8 +1,11 @@
 ---
 title: java提高篇（七）-----详解内部类
-date: 2017-10-23 13:38:12
-tags: [java,转载]
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: '30043e85'
+date: 2017-10-23 13:38:12
 ---
 > 转载：http://blog.csdn.net/chenssy/article/details/13024951
 

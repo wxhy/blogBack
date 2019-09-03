@@ -1,8 +1,11 @@
 ---
 title: java提高篇（八）-----实现多重继承
-date: 2017-10-23 13:38:22
-tags: [java,转载]
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: f13260f4
+date: 2017-10-23 13:38:22
 ---
 > 转载： http://blog.csdn.net/chenssy/article/details/13168265
 

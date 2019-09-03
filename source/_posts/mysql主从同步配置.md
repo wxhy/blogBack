@@ -1,8 +1,10 @@
+---
 title: mysql主从同步配置
 tags:
   - Mysql
 categories:
   - Mysql
+abbrlink: b1d2b707
 date: 2019-08-19 14:07:00
 ---
 mysql主从同步主要基于日志（binlog）的主从复制方式

@@ -1,9 +1,11 @@
+---
 title: Spring Boot读写分离配置
 author: Carlos
 tags:
   - Spring Boot
 categories:
   - Spring Boot
+abbrlink: 85578cb1
 date: 2019-08-20 17:29:00
 ---
 数据源配置

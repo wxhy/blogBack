@@ -1,8 +1,11 @@
 ---
 title: Java提高篇（三五）-----Java集合细节（一）：请为集合指定初始容量
-date: 2017-10-24 13:10:22
-tags: [java,转载]
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: 17dabf45
+date: 2017-10-24 13:10:22
 ---
 > 转载： http://blog.csdn.net/chenssy/article/details/38373833
 

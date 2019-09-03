@@ -1,8 +1,11 @@
 ---
 title: Java提高篇（三七）—–Java集合细节（三）：subList的缺陷
-date: 2017-10-24 13:10:28
-tags: [java,转载]
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: '46384154'
+date: 2017-10-24 13:10:28
 ---
 > 转载： http://blog.csdn.net/chenssy/article/details/44102915
 

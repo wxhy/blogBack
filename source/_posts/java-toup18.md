@@ -1,8 +1,11 @@
 ---
 title: java提高篇(十八)-----数组之一：认识JAVA数组
-date: 2017-10-23 22:38:52
-tags: [java,转载]
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: c15f12bd
+date: 2017-10-23 22:38:52
 ---
 > 转载： http://blog.csdn.net/chenssy/article/details/17732783
 

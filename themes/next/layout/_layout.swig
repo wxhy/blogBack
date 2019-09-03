@@ -127,5 +127,6 @@
   <div id="aplayer"></div>
   <script type="text/javascript" src="/dist/APlayer.min.js"></script>
   <script type="text/javascript" src="/dist/music.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/itqhy/live2d-widget/autoload.js"></script>
 </body>
 </html>

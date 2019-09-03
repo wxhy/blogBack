@@ -1,8 +1,11 @@
 ---
-title:  Java提高篇（三二）-----List总结
-date: 2017-10-24 13:10:13
-tags: [java,转载]
+title: Java提高篇（三二）-----List总结
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: d59c343e
+date: 2017-10-24 13:10:13
 ---
 > 转载： http://blog.csdn.net/chenssy/article/details/37756599
 

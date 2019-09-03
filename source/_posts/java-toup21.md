@@ -1,8 +1,11 @@
 ---
-title:  java提高篇（二二）-----LinkedList
-date: 2017-10-24 13:09:34
-tags: [java,转载]
+title: java提高篇（二二）-----LinkedList
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: bf33ec17
+date: 2017-10-24 13:09:34
 ---
 > 转载： http://blog.csdn.net/chenssy/article/details/18099417
 

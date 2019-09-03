@@ -1,8 +1,11 @@
 ---
 title: Java提高篇（二七）-----TreeMap
-date: 2017-10-24 13:09:53
-tags: [java,转载]
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: 822b9db
+date: 2017-10-24 13:09:53
 ---
 > 转载： http://blog.csdn.net/chenssy/article/details/23299963
 

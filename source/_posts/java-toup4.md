@@ -1,8 +1,11 @@
 ---
-title:  java提高篇（三）-----理解java的三大特性之多态
-date: 2017-10-23 11:23:01
-tags: [java,转载]
+title: java提高篇（三）-----理解java的三大特性之多态
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: 522e350e
+date: 2017-10-23 11:23:01
 ---
 
 > 转载： [http://blog.csdn.net/chenssy/article/details/12786385](http://blog.csdn.net/chenssy/article/details/12786385)

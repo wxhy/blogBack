@@ -1,8 +1,11 @@
 ---
-title:  java提高篇（九）-----详解匿名内部类
-date: 2017-10-23 13:38:35
-tags: [java,转载]
+title: java提高篇（九）-----详解匿名内部类
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: ea538890
+date: 2017-10-23 13:38:35
 ---
 > 转载： http://blog.csdn.net/chenssy/article/details/13170015
 

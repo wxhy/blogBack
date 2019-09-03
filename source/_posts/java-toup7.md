@@ -1,8 +1,11 @@
 ---
-title:  java提高篇（六）-----关键字static
-date: 2017-10-23 13:38:04
-tags: [java,转载]
+title: java提高篇（六）-----关键字static
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: 6310ff69
+date: 2017-10-23 13:38:04
 ---
 
 > 转载： http://blog.csdn.net/chenssy/article/details/13004291

@@ -1,8 +1,11 @@
 ---
 title: java提高篇（二）-----理解java的三大特性之继承
-date: 2017-10-23 10:54:46
-tags: [java,转载]
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: 3bc9495a
+date: 2017-10-23 10:54:46
 ---
 
 > 转载： [http://blog.csdn.net/chenssy/article/details/12785831](http://blog.csdn.net/chenssy/article/details/12785831)

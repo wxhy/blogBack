@@ -1,8 +1,11 @@
 ---
 title: java提高篇（十一）-----代码块
-date: 2017-10-23 22:38:24
-tags: [java,转载]
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: ed0f4534
+date: 2017-10-23 22:38:24
 ---
 > 转载： http://blog.csdn.net/chenssy/article/details/14486833
 

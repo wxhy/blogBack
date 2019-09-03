@@ -1,8 +1,9 @@
 ---
 title: Intellij IDEA运行报Command line is too long错误
-date: 2019-06-29 16:23:53
-tags: 
 categories: 常见问题
+abbrlink: 7107112b
+date: 2019-06-29 16:23:53
+tags:
 ---
 
 IDEA 运行springBoot Application 出现 command line is too long错误

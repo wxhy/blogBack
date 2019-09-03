@@ -1,8 +1,11 @@
 ---
-title:  java提高篇（二十）-----集合大家族
-date: 2017-10-23 22:38:59
-tags: [java,转载]
+title: java提高篇（二十）-----集合大家族
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: da849b7b
+date: 2017-10-23 22:38:59
 ---
 > 转载： http://blog.csdn.net/chenssy/article/details/17732841
 

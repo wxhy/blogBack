@@ -1,8 +1,11 @@
 ---
-title: java提高篇（十四）-----关键字final 
-date: 2017-10-23 22:38:39
-tags: [java,转载]
+title: java提高篇（十四）-----关键字final
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: 2a921769
+date: 2017-10-23 22:38:39
 ---
 > 转载： http://blog.csdn.net/chenssy/article/details/17591563
 

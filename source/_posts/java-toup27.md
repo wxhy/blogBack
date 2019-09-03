@@ -1,8 +1,11 @@
 ---
 title: Java提高篇（二八）------TreeSet
-date: 2017-10-24 13:09:58
-tags: [java,转载]
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: 7f0141b7
+date: 2017-10-24 13:09:58
 ---
 > 转载： http://blog.csdn.net/chenssy/article/details/29218799
 

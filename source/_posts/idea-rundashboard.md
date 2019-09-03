@@ -1,8 +1,9 @@
 ---
 title: IDEA 显示 RunDashboard
+categories: 常见问题
+abbrlink: 2fc130b3
 date: 2019-06-29 16:30:25
 tags:
-categories: 常见问题
 ---
 
 关于IDEA 启动多个服务时，不自动提示RunDashboard

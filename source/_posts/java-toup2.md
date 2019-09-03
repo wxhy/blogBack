@@ -1,8 +1,11 @@
 ---
 title: java提高篇(一)-----理解java的三大特性之封装
-date: 2017-10-21 00:06:18
-tags: [java,转载]
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: fe3e490
+date: 2017-10-21 00:06:18
 ---
 
 > 转载： [http://blog.csdn.net/chenssy/article/details/12757911](http://blog.csdn.net/chenssy/article/details/12757911)

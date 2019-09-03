@@ -1,8 +1,11 @@
 ---
 title: java提高篇-----详解java的四舍五入与保留位
-date: 2017-10-20 23:34:10
-tags: [java,转载]
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: 54d31add
+date: 2017-10-20 23:34:10
 ---
 
 > 转载：[http://blog.csdn.net/chenssy/article/details/12719811](http://blog.csdn.net/chenssy/article/details/12719811)

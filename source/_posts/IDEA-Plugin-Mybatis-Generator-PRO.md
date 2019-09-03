@@ -1,8 +1,12 @@
 ---
-title: MyBatisCodeHelper-Pro插件破解版[2.7.1]
-date: 2019-07-02 16:56:30
-tags: [软件调试,IDEA,插件]
+title: 'MyBatisCodeHelper-Pro插件破解版[2.7.1]'
+tags:
+  - 软件调试
+  - IDEA
+  - 插件
 categories: 软件调试
+abbrlink: '40e63741'
+date: 2019-07-02 16:56:30
 ---
 
 ## **下载地址**

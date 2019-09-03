@@ -1,8 +1,11 @@
 ---
 title: java提高篇(十六)-----异常（一）
-date: 2017-10-23 22:38:43
-tags: [java,转载]
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: fe7fe614
+date: 2017-10-23 22:38:43
 ---
 > 转载： http://blog.csdn.net/chenssy/article/details/17651909
 

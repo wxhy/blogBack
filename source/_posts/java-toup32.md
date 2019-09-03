@@ -1,8 +1,11 @@
 ---
 title: Java提高篇（三三）-----Map总结
-date: 2017-10-24 13:10:16
-tags: [java,转载]
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: b1ccff99
+date: 2017-10-24 13:10:16
 ---
 > 转载： http://blog.csdn.net/chenssy/article/details/37909815
 

@@ -1,8 +1,11 @@
 ---
 title: java提高篇（四）-----抽象类与接口
-date: 2017-10-23 13:04:03
-tags: [java,转载]
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: ea4aa8e
+date: 2017-10-23 13:04:03
 ---
 
 > 转载： [http://blog.csdn.net/chenssy/article/details/12858267](http://blog.csdn.net/chenssy/article/details/12858267)

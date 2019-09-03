@@ -1,8 +1,9 @@
 ---
 title: Spring Security 在配置文件中配置ignoreUrls
-date: 2019-07-02 15:57:48
 tags: 软件配置
-categories: 'Spring Security'
+categories: Spring Security
+abbrlink: 8a0eef75
+date: 2019-07-02 15:57:48
 ---
 
 Spring Security 资源服务器配置免登录链接如下：

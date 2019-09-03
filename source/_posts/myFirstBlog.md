@@ -1,3 +1,4 @@
+---
 title: 记“刺客信条”三部曲：水月镜像，无心去来
 tags:
   - 游戏
@@ -6,6 +7,7 @@ categories:
   - 转载
 comments: true
 brief: 第一次有冲动为一个游戏写文字
+abbrlink: dcb13445
 date: 2017-10-19 22:40:00
 ---
 > 转载： http://litten.me/2012/12/18/assassins-creed/

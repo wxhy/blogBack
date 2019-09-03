@@ -1,8 +1,11 @@
 ---
 title: Java提高篇（三四）-----fail-fast机制
-date: 2017-10-24 13:10:19
-tags: [java,转载]
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: a04d7e6d
+date: 2017-10-24 13:10:19
 ---
 > 转载： http://blog.csdn.net/chenssy/article/details/38151189
 

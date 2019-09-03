@@ -1,8 +1,11 @@
 ---
 title: Java提高篇（三一）-----Stack
-date: 2017-10-24 13:10:10
-tags: [java,转载]
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: a7e9a612
+date: 2017-10-24 13:10:10
 ---
 > 转载： http://blog.csdn.net/chenssy/article/details/37756539
 

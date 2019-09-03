@@ -1,8 +1,11 @@
 ---
 title: java提高篇（十）-----强制类型转换
-date: 2017-10-23 22:38:15
-tags: [java,转载]
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: 74443e7b
+date: 2017-10-23 22:38:15
 ---
 > 转载： http://blog.csdn.net/chenssy/article/details/14111307
 

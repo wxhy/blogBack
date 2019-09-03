@@ -1,8 +1,11 @@
 ---
-title:  java提高篇（二九）-----Vector
-date: 2017-10-24 13:10:01
-tags: [java,转载]
+title: java提高篇（二九）-----Vector
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: daef29b5
+date: 2017-10-24 13:10:01
 ---
 > 转载： http://blog.csdn.net/chenssy/article/details/37520981
 

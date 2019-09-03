@@ -1,8 +1,11 @@
 ---
 title: Java提高篇（三六）-----java集合细节（二）：asList的缺陷
-date: 2017-10-24 13:10:25
-tags: [java,转载]
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: 5991a9fa
+date: 2017-10-24 13:10:25
 ---
 > 转载： http://blog.csdn.net/chenssy/article/details/38373877
 

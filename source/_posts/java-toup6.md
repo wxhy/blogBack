@@ -1,8 +1,11 @@
 ---
 title: java提高篇（五）-----使用序列化实现对象的拷贝
-date: 2017-10-23 13:22:02
-tags: [java,转载]
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: a11bddda
+date: 2017-10-23 13:22:02
 ---
 
 > 转载： [http://blog.csdn.net/chenssy/article/details/12952063](http://blog.csdn.net/chenssy/article/details/12952063)

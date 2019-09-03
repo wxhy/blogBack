@@ -1,8 +1,11 @@
 ---
 title: java提高篇（二三）-----HashMap
-date: 2017-10-24 13:09:37
-tags: [java,转载]
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: 1f86fd
+date: 2017-10-24 13:09:37
 ---
 > 转载： http://blog.csdn.net/chenssy/article/details/18323767
 

@@ -1,8 +1,11 @@
 ---
-title:  java提高篇（二四）-----HashSet
-date: 2017-10-24 13:09:42
-tags: [java,转载]
+title: java提高篇（二四）-----HashSet
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: 864acdf8
+date: 2017-10-24 13:09:42
 ---
 > 转载： http://blog.csdn.net/chenssy/article/details/21988605
 

@@ -1,8 +1,11 @@
 ---
 title: java提高篇（十三）-----字符串
-date: 2017-10-23 22:38:36
-tags: [java,转载]
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: beafe466
+date: 2017-10-23 22:38:36
 ---
 > 转载： http://blog.csdn.net/chenssy/article/details/17591363
 

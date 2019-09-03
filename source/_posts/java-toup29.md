@@ -1,8 +1,11 @@
 ---
 title: java提高篇（三十）-----Iterator
-date: 2017-10-24 13:10:05
-tags: [java,转载]
+tags:
+  - java
+  - 转载
 categories: java开发
+abbrlink: fd665700
+date: 2017-10-24 13:10:05
 ---
 > 转载： http://blog.csdn.net/chenssy/article/details/37521461
 
