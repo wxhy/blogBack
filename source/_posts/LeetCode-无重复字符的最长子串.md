@@ -2,6 +2,7 @@ title: LeetCode-无重复字符的最长子串
 author: Carlos
 tags:
   - LettCode
+  - 动态规划
 categories:
   - LettCode
 mathjax: true
@@ -78,11 +79,7 @@ public class Solution {
 #### 复杂度分析
 + 时间复杂度：$O(n{}^3)$
   要验证索引范围在 [i,j) 内的字符是否都是唯一，我们需要检查该范围中的所有字符。因此，它将花费 **O(j-i)** 的时间。
-  对于给定的 i，对于所有 j∈[i+1,n] 所耗费的时间总和为：
-  
-$$\sum_{i=1}^NO(j-i)$$
-因此，执行所有步骤耗去的时间总和为：
-
+  对于给定的 i，对于所有 j∈[i+1,n] 所耗费的时间总和为：$$\sum_{i=1}^NO(j-i)$$。因此，执行所有步骤耗去的时间总和为：
 $$O\left(\sum_{i=0}^{n-1} \left(\sum_{j=i+1}^n(j-i)\right)\right)=O\left(\sum_{i=0} ^{n-1}\frac{(1+n-i)(n-i)}{2}\right)=O(n{}^3)$$
 
 + 空间复杂度：$O(min(n, m))$，我们需要 $O(k)$ 的空间来检查子字符串中是否有重复字符，其中 k 表示 Set 的大小。而 Set 的大小取决于字符串 n 的大小以及字符集/字母 m 的大小。
