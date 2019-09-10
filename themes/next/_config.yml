@@ -348,7 +348,7 @@ codeblock:
     style:
 
 # Use icon instead of the symblo # to indicate the tag at the bottom of the post
-tag_icon: false
+tag_icon: true
 
 # Wechat Subscriber
 wechat_subscriber:
@@ -423,7 +423,7 @@ cheers: true
 # TagCloud settings for tags page.
 tagcloud:
   # If true, font size, font color and amount of tags can be customized
-  enable: false
+  enable: true
   # All values below are same as default, change them by yourself
   min: 12 # min font size in px
   max: 30 # max font size in px
@@ -664,16 +664,17 @@ gitalk:
 
 
 # ---------------------------------------------------------------
-# Content Sharing Services
+# Content Sharing Services 
 # See: https://theme-next.org/docs/third-party-services/content-sharing-services
 # ---------------------------------------------------------------
 
 # Baidu Share
 # Available values: button | slide
 # Warning: Baidu Share does not support https.
-baidushare:
- type: slide
+# baidushare:
+#  type: slide
 
+share_js: true
 # AddThis Share, See: https://www.addthis.com
 # Go to https://www.addthis.com/dashboard to customize your tools.
 #add_this_id:
@@ -683,10 +684,10 @@ baidushare:
 # Likely supports four looks, nine social networks, any button text
 # You are free to modify the text value and order of any network
 likely:
-  enable: false
+  enable: true
   look: normal # available values: normal, light, small, big
   networks:
-    twitter: Tweet
+    # twitter: Tweet
 
 
 # NeedMoreShare2
@@ -926,7 +927,7 @@ mermaid:
 
 # Use velocity to animate everything.
 motion:
-  enable: true
+  enable: false
   async: false
   transition:
     # Transition variants:
@@ -979,11 +980,11 @@ canvas_nest:
 # JavaScript 3D library.
 # Dependencies: https://github.com/theme-next/theme-next-three
 # three_waves
-three_waves: true
+three_waves: false
 # canvas_lines
-canvas_lines: true
+canvas_lines: false
 # canvas_sphere
-canvas_sphere: true
+canvas_sphere: false
 
 # Canvas-ribbon
 # Dependencies: https://github.com/theme-next/theme-next-canvas-ribbon

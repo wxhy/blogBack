@@ -21,6 +21,9 @@
   <title>{% block title %}{% endblock %}</title>
   {% include '_third-party/analytics/index.swig' %}
   {{ partial('_scripts/noscript.swig', {}, {cache: theme.cache.enable}) }}
+
+  <link rel="stylesheet" href="/dist/css/share.min.css">
+
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang || page.language || config.language }}">
@@ -123,6 +126,8 @@
   {% include '_third-party/chatra.swig' %}
   {% include '_third-party/tidio.swig' %}
 
+  <script src="/dist/js/social-share.min.js"></script>
+  <script type="text/javascript" src="/dist/linkcard.js"></script>
   <link rel="stylesheet" href="/dist/APlayer.min.css">
   <div id="aplayer"></div>
   <script type="text/javascript" src="/dist/APlayer.min.js"></script>
