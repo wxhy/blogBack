@@ -7,8 +7,7 @@ categories: java开发
 abbrlink: daef29b5
 date: 2017-10-24 13:10:01
 ---
-> 转载： http://blog.csdn.net/chenssy/article/details/37520981
-
+<a href="http://blog.csdn.net/chenssy/article/details/37520981" class="LinkCard">Vector</a>
 ## Vector简介
 Vector可以实现可增长的对象数组。与数组一样，它包含可以使用整数索引进行访问的组件。不过，Vector的大小是可以增加或者减小的，以便适应创建Vector后进行添加或者删除操作。
 Vector实现List接口，继承AbstractList类，所以我们可以将其看做队列，支持相关的添加、删除、修改、遍历等功能。

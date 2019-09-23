@@ -7,8 +7,7 @@ categories: java开发
 abbrlink: adbc4ff
 date: 2017-10-24 13:09:49
 ---
-> 转载： http://blog.csdn.net/chenssy/article/details/23299963
-
+<a href="http://blog.csdn.net/chenssy/article/details/23299963" class="LinkCard">hashCode</a>
 
  ## hashCode的作用
 要想了解一个方法的内在原理，我们首先需要明白它是干什么的，也就是这个方法的作用。在讲解数组时（java提高篇（十八）------数组），我们提到数组是java中效率最高的数据结构，但是“最高”是有前提的。第一我们需要知道所查询数据的所在位置。第二：如果我们进行迭代查找时，数据量一定要小，对于大数据量而言一般推荐集合。
@@ -112,9 +111,9 @@ hashCode与equals
             return true;  
         }  
     } 
-``` 
+```
 该Bean为一个标准的Java Bean，重新实现了hashCode方法和equals方法。
- ```java
+```java
     public class Main extends JPanel {  
     
         public static void main(String[] args) {  
@@ -136,7 +135,7 @@ hashCode与equals
             System.out.println("set.size()="+set.size());  
         }  
     } 
-``` 
+```
 运行结果如下：
 ![](/uploads/hashcode2.png)
 从上图可以看出，程序调用四次hashCode方法，一次equals方法，其set的长度只有3。add方法运行流程完全符合他们两者之间的处理流程。

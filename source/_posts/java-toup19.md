@@ -7,7 +7,7 @@ categories: java开发
 abbrlink: 3338b61
 date: 2017-10-23 22:38:55
 ---
-> 转载： http://blog.csdn.net/chenssy/article/details/17732815
+<a href="http://blog.csdn.net/chenssy/article/details/17732815" class="LinkCard">数组之二</a>
 
 ## 性能？请优先考虑数组
 在java中有很多方式来存储一系列数据，而且在操作上面比数组方便的多？但为什么我们还需要使用数组，而不是替代它呢？数组与其他种类的容器之间的区别有三个方面：效率、类型和保存基本类型的能力。在java中，数组是一种效率最高的存储和随机访问对象引用序列的方式。

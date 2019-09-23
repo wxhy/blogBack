@@ -1,4 +1,3 @@
----
 title: java提高篇（二二）-----LinkedList
 tags:
   - java
@@ -7,7 +6,7 @@ categories: java开发
 abbrlink: bf33ec17
 date: 2017-10-24 13:09:34
 ---
-> 转载： http://blog.csdn.net/chenssy/article/details/18099417
+<a href="http://blog.csdn.net/chenssy/article/details/18099417" class="LinkCard">LinkedList</a>
 
 ## 概述
 LinkedList与ArrayList一样实现List接口，只是ArrayList是List接口的大小可变数组的实现，LinkedList是List接口链表的实现。基于链表实现的方式使得LinkedList在插入和删除时更优于ArrayList，而随机访问则比ArrayList逊色些。
@@ -52,19 +51,19 @@ private static class Entry<E> {
 LinkedList提高了两个构造方法：LinkedLis()和LinkedList(Collection<? extends E> c)。
 ```java
 /** 
-     *  构造一个空列表。 
-     */  
-    public LinkedList() {  
-        header.next = header.previous = header;  
-    }  
-      
-    /** 
-     *  构造一个包含指定 collection 中的元素的列表，这些元素按其 collection 的迭代器返回的顺序排列。 
-     */  
-    public LinkedList(Collection<? extends E> c) {  
-        this();  
-        addAll(c);  
-    }  
+*  构造一个空列表。 
+*/  
+public LinkedList() {  
+    header.next = header.previous = header;  
+}  
+
+/** 
+*  构造一个包含指定 collection 中的元素的列表，这些元素按其 collection 的迭代器返回的顺序排列。 
+*/  
+public LinkedList(Collection<? extends E> c) {  
+    this();  
+    addAll(c);  
+}  
 ```
 LinkedList()构造一个空列表。里面没有任何元素，仅仅只是将header节点的前一个元素、后一个元素都指向自身。
 LinkedList(Collection<? extends E> c)： 构造一个包含指定 collection 中的元素的列表，这些元素按其 collection 的迭代器返回的顺序排列。该构造函数首先会调用LinkedList()，构造一个空列表，然后调用了addAll()方法将Collection中的所有元素添加到列表中。以下是addAll()的源代码：
@@ -113,38 +112,43 @@ LinkedList(Collection<? extends E> c)： 构造一个包含指定 collection 中
 在addAll()方法中，涉及到了两个方法，一个是entry(int index)，该方法为LinkedList的私有方法，主要是用来查找index位置的节点元素。
 ```java
 /** 
-     * 返回指定位置(若存在)的节点元素 
-     */  
-    private Entry<E> entry(int index) {  
-        if (index < 0 || index >= size)  
-            throw new IndexOutOfBoundsException("Index: " + index + ", Size: "  
-                    + size);  
-        //头部节点  
-        Entry<E> e = header;  
-        //判断遍历的方向  
-        if (index < (size >> 1)) {  
-            for (int i = 0; i <= index; i++)  
-                e = e.next;  
-        } else {  
-            for (int i = size; i > index; i--)  
-                e = e.previous;  
-        }  
-        return e;  
-    } 
+* 返回指定位置(若存在)的节点元素 
+*/  
+private Entry<E> entry(int index) {  
+    if (index < 0 || index >= size)  
+        throw new IndexOutOfBoundsException("Index: " + index + ", Size: "  
+                + size);  
+    //头部节点  
+    Entry<E> e = header;  
+    //判断遍历的方向  
+    if (index < (size >> 1)) {  
+        for (int i = 0; i <= index; i++)  
+            e = e.next;  
+    } else {  
+        for (int i = size; i > index; i--)  
+            e = e.previous;  
+    }  
+    return e;  
+} 
 ```
+
 从该方法有两个遍历方向中我们也可以看出LinkedList是双向链表，这也是在构造方法中为什么需要将header的前、后节点均指向自己。
 如果对数据结构有点了解，对上面所涉及的内容应该问题，我们只需要清楚一点：LinkedList是双向链表，其余都迎刃而解。
 由于篇幅有限，下面将就LinkedList中几个常用的方法进行源码分析。
+
 ### 增加方法
+
 add(E e): 将指定元素添加到此列表的结尾。
+
 ```java
     public boolean add(E e) {  
         addBefore(e, header);  
         return true;  
     }  
 ```
+
 该方法调用addBefore方法，然后直接返回true，对于addBefore()而已，它为LinkedList的私有方法。
-```java
+``` java
 private Entry<E> addBefore(E e, Entry<E> entry) {  
         //利用Entry构造函数构建一个新节点 newEntry，  
         Entry<E> newEntry = new Entry<E>(e, entry, entry.previous);  
@@ -156,15 +160,20 @@ private Entry<E> addBefore(E e, Entry<E> entry) {
         //修改次数+1  
         modCount++;  
         return newEntry;  
-    } 
-``` 
+} 
+```
+
 在addBefore方法中无非就是做了这件事：构建一个新节点newEntry，然后修改其前后的引用。
 LinkedList还提供了其他的增加方法：
+
+```java
 add(int index, E element)：在此列表中指定的位置插入指定的元素。
 addAll(Collection<? extends E> c)：添加指定 collection 中的所有元素到此列表的结尾，顺序是指定 collection 的迭代器返回这些元素的顺序。
 addAll(int index, Collection<? extends E> c)：将指定 collection 中的所有元素从指定位置开始插入此列表。
 AddFirst(E e): 将指定元素插入此列表的开头。
 addLast(E e): 将指定元素添加到此列表的结尾。
+```
+
 ### 移除方法
 remove(Object o)：从此列表中移除首次出现的指定元素（如果存在）。该方法的源代码如下：
 ```java
@@ -186,10 +195,12 @@ public boolean remove(Object o) {
         }  
         return false;  
     } 
-``` 
+```
+
 该方法首先会判断移除的元素是否为null，然后迭代这个链表找到该元素节点，最后调用remove(Entry<E> e)，remove(Entry<E> e)为私有方法，是LinkedList中所有移除方法的基础方法，如下：
+  
 ```java
-private E remove(Entry<E> e) {  
+	private E remove(Entry<E> e) {  
         if (e == header)  
             throw new NoSuchElementException();  
   
@@ -208,9 +219,9 @@ private E remove(Entry<E> e) {
         modCount++;  
         return result;  
     } 
-``` 
+```
 其他的移除方法：
-
+```java
        clear()： 从此列表中移除所有元素。
        remove()：获取并移除此列表的头（第一个元素）。
        remove(int index)：移除此列表中指定位置处的元素。
@@ -219,11 +230,13 @@ private E remove(Entry<E> e) {
        removeFirstOccurrence(Object o)：从此列表中移除第一次出现的指定元素（从头部到尾部遍历列表时）。
        removeLast()：移除并返回此列表的最后一个元素。
        removeLastOccurrence(Object o)：从此列表中移除最后一次出现的指定元素（从头部到尾部遍历列表时）。
+```
 ### 查找方法
 对于查找方法的源码就没有什么好介绍了，无非就是迭代，比对，然后就是返回当前值。
-
+```java
        get(int index)：返回此列表中指定位置处的元素。
        getFirst()：返回此列表的第一个元素。
        getLast()：返回此列表的最后一个元素。
        indexOf(Object o)：返回此列表中首次出现的指定元素的索引，如果此列表中不包含该元素，则返回 -1。
        lastIndexOf(Object o)：返回此列表中最后出现的指定元素的索引，如果此列表中不包含该元素，则返回 -1。
+```

@@ -7,7 +7,7 @@ categories: java开发
 abbrlink: ea538890
 date: 2017-10-23 13:38:35
 ---
-> 转载： http://blog.csdn.net/chenssy/article/details/13170015
+<a href="http://blog.csdn.net/chenssy/article/details/13170015" class="LinkCard">详解匿名内部类</a>
 
 在java提高篇-----详解内部类中对匿名内部类做了一个简单的介绍，但是内部类还存在很多其他细节问题，所以就衍生出这篇博客。在这篇博客中你可以了解到匿名内部类的使用、匿名内部类要注意的事项、如何初始化匿名内部类、匿名内部类使用的形参为何要为final。
 

@@ -7,8 +7,7 @@ categories: java开发
 abbrlink: fd665700
 date: 2017-10-24 13:10:05
 ---
-> 转载： http://blog.csdn.net/chenssy/article/details/37521461
-
+<a href="http://blog.csdn.net/chenssy/article/details/37521461" class="LinkCard">Iterator</a>
 迭代对于我们搞Java的来说绝对不陌生。我们常常使用JDK提供的迭代接口进行Java集合的迭代。
 ```java
     Iterator iterator = list.iterator();  

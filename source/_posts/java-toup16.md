@@ -7,7 +7,7 @@ categories: java开发
 abbrlink: fe7fe614
 date: 2017-10-23 22:38:43
 ---
-> 转载： http://blog.csdn.net/chenssy/article/details/17651909
+<a href="http://blog.csdn.net/chenssy/article/details/17651909" class="LinkCard">异常（一）</a>
 
 **Java的基本理念是“结构不佳的代码不能运行”！！！！！**
 大成若缺，其用不弊。

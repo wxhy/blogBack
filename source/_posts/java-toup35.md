@@ -7,8 +7,7 @@ categories: java开发
 abbrlink: 5991a9fa
 date: 2017-10-24 13:10:25
 ---
-> 转载： http://blog.csdn.net/chenssy/article/details/38373877
-
+<a href="http://blog.csdn.net/chenssy/article/details/38373877" class="LinkCard">java集合细节（二）：asList的缺陷</a>
 在实际开发过程中我们经常使用asList讲数组转换为List，这个方法使用起来非常方便，但是asList方法存在几个缺陷：
 ## 避免使用基本数据类型数组转换为列表
 使用8个基本类型数组转换为列表时会存在一个比较有味的缺陷。先看如下程序：

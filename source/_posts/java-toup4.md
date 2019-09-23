@@ -7,9 +7,7 @@ categories: java开发
 abbrlink: 522e350e
 date: 2017-10-23 11:23:01
 ---
-
-> 转载： [http://blog.csdn.net/chenssy/article/details/12786385](http://blog.csdn.net/chenssy/article/details/12786385)
-
+<a href="http://blog.csdn.net/chenssy/article/details/12786385" class="LinkCard">理解java的三大特性之多态</a>
 
 面向对象编程有三大特性：封装、继承、多态。
 封装隐藏了类的内部实现机制，可以在不影响使用的情况下改变类的内部结构，同时也保护了数据。对外界而已它的内部细节是隐藏的，暴露给外界的只是它的访问方法。

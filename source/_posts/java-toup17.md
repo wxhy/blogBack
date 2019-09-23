@@ -7,7 +7,7 @@ categories: java开发
 abbrlink: 13bda316
 date: 2017-10-23 22:38:47
 ---
-> 转载： http://blog.csdn.net/chenssy/article/details/17651971
+<a href="http://blog.csdn.net/chenssy/article/details/17651971" class="LinkCard">异常(二)</a>
 
 ## 自定义异常
 Java确实给我们提供了非常多的异常，但是异常体系是不可能预见所有的希望加以报告的错误，所以Java允许我们自定义异常来表现程序中可能会遇到的特定问题，总之就是一句话：我们不必拘泥于Java中已有的异常类型。

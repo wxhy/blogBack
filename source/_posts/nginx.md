@@ -1,4 +1,3 @@
----
 title: Nginx能为前端开发带来什么？
 tags:
   - 前端
@@ -7,7 +6,7 @@ categories: 转载
 abbrlink: 7b869b23
 date: 2017-10-20 10:12:22
 ---
-> 转载： http://litten.me/2015/11/03/nginx-in-fe/
+<a href="http://litten.me/2015/11/03/nginx-in-fe/" class="LinkCard">Nginx能为前端开发带来什么？</a>
 
 
 Nginx那么好，我想去看看。
@@ -150,7 +149,7 @@ Nginx，一名**网红**（网络服务器红人...)，就算没有自传和回�
 
 最简单的模型中，我们把所有带``cgi-bin``路径的请求，rewite到本地的一个服务，同时带上请求的所有参数，      
 仅需这三行配置即可：
-```
+```yml
 location ~ /cgi-bin/* {
     rewrite ^(.*)$ http://127.0.0.1:8080/cgi-bin/ last;
 }
@@ -165,7 +164,7 @@ location ~ /cgi-bin/* {
 通过 `default_server` 作为代理，手机终端通过设置网络代理为本机IP和相应的 `listen port`，从而可以访问本机的 Web 服务。
 
 其中也是用到了[ngx_http_proxy_module](http://nginx.org/en/docs/http/ngx_http_proxy_module.html)模块的配置：
-```js
+```javaScript
  server {
     listen  80 default_server;
     server_name  localhost;

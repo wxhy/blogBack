@@ -7,8 +7,7 @@ categories: java开发
 abbrlink: a11bddda
 date: 2017-10-23 13:22:02
 ---
-
-> 转载： [http://blog.csdn.net/chenssy/article/details/12952063](http://blog.csdn.net/chenssy/article/details/12952063)
+<a href="http://blog.csdn.net/chenssy/article/details/12952063" class="LinkCard">使用序列化实现对象的拷贝</a>
 
 我们知道在Java中存在这个接口Cloneable，实现该接口的类都会具备被拷贝的能力，同时拷贝是在内存中进行，在性能方面比我们直接通过new生成对象来的快，特别是在大对象的生成上，使得性能的提升非常明显。然而我们知道拷贝分为深拷贝和浅拷贝之分，但是浅拷贝存在对象属性拷贝不彻底问题。关于深拷贝、浅拷贝的请参考这里：渐析java的浅拷贝和深拷贝
 ## 浅拷贝问题

@@ -2,7 +2,7 @@ options:
   lineNumbers: true
   spellcheck: true
   askImageFilename: true
-  overwriteImages: true
+  overwriteImages: false
   imagePath: /uploads
   imagePrefix: ''
 editor:

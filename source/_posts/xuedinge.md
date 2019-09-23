@@ -1,11 +1,10 @@
----
 title: 薛定谔的年 1.1 -1.7
 tags: 旧事
 categories: 转载
 abbrlink: bbd430bc
 date: 2017-10-20 09:50:18
 ---
-> 转载： http://litten.me/2017/01/08/diary-2017-0101-0107/
+<a href="http://litten.me/2017/01/08/diary-2017-0101-0107/" class="LinkCard">薛定谔的年 1.1 -1.7</a>
 
 
 ![](/uploads/diary-18.jpg)

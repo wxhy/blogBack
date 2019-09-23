@@ -14,8 +14,7 @@ date: 2017-10-24 13:10:31
 Copyright © 2001,2006,2014 Eric S. Raymond, Rick Moen
 
 本指南英文版版权为 Eric S. Raymond, Rick Moen 所有。
-
-原文网址：[http://www.catb.org/~esr/faqs/smart-questions.html](http://www.catb.org/~esr/faqs/smart-questions.html)
+<a href="http://www.catb.org/~esr/faqs/smart-questions.html" class="LinkCard">提问的智慧</a>
 
 Copyleft 2001 by D.H.Grand(nOBODY/Ginux), 2010 by Gasolin, 2015 by Ryan Wu
 <!-- more -->

@@ -7,8 +7,7 @@ categories: java开发
 abbrlink: 6310ff69
 date: 2017-10-23 13:38:04
 ---
-
-> 转载： http://blog.csdn.net/chenssy/article/details/13004291
+<a href="http://blog.csdn.net/chenssy/article/details/13004291" class="LinkCard">关键字static</a>
 
 ## static代表着什么
 在Java中并不存在全局变量的概念，但是我们可以通过static来实现一个“伪全局”的概念，在Java中static表示“全局”或者“静态”的意思，用来修饰成员变量和成员方法，当然也可以修饰代码块。

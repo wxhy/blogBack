@@ -7,7 +7,7 @@ categories: java开发
 abbrlink: 2a921769
 date: 2017-10-23 22:38:39
 ---
-> 转载： http://blog.csdn.net/chenssy/article/details/17591563
+<a href="http://blog.csdn.net/chenssy/article/details/17591563" class="LinkCard">关键字final</a>
 
 在程序设计中，我们有时可能希望某些数据是不能够改变的，这个时候final就有用武之地了。final是java的关键字，它所表示的是“这部分是无法修改的”。不想被改变的原因有两个：效率、设计。使用到final的有三种情况：数据、方法、类。
 

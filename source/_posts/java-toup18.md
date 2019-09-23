@@ -7,8 +7,7 @@ categories: java开发
 abbrlink: c15f12bd
 date: 2017-10-23 22:38:52
 ---
-> 转载： http://blog.csdn.net/chenssy/article/details/17732783
-
+<a href="http://blog.csdn.net/chenssy/article/details/17732783" class="LinkCard">数组之一：认识JAVA数组</a>
 
 ## 什么是数组
 数组？什么是数组？在我印象中的数组是应该这样的：通过new关键字创建并组装他们，通过使用整形索引值访问它的元素，并且它的尺寸是不可变的！

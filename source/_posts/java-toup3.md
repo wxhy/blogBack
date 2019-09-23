@@ -7,13 +7,12 @@ categories: java开发
 abbrlink: 3bc9495a
 date: 2017-10-23 10:54:46
 ---
-
-> 转载： [http://blog.csdn.net/chenssy/article/details/12785831](http://blog.csdn.net/chenssy/article/details/12785831)
+<a href="http://blog.csdn.net/chenssy/article/details/12785831" class="LinkCard">理解java的三大特性之继承</a>
 
 在《Think in java》中有这样一句话：复用代码是Java众多引人注目的功能之一。但要想成为极具革命性的语言，仅仅能够复制代码并对加以改变是不够的，它还必须能够做更多的事情。在这句话中最引人注目的是“复用代码”,尽可能的复用代码使我们程序员一直在追求的，现在我来介绍一种复用代码的方式，也是java三大特性之一---继承。
 
 ## 继承
-在讲解之前我们先看一个例子，该例子是前篇博文（[java提高篇-----理解java的三大特性之封装](https://itqhy.github.io/2017/10/21/java-toup2/)）的。
+在讲解之前我们先看一个例子，该例子是前篇博文（[java提高篇-----理解java的三大特性之封装](http://localhost:4000/post/fe3e490.html)）的。
 ![](/uploads/java3-1.png) 
 
 <!-- more -->

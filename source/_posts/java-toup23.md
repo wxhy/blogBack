@@ -7,7 +7,7 @@ categories: java开发
 abbrlink: 864acdf8
 date: 2017-10-24 13:09:42
 ---
-> 转载： http://blog.csdn.net/chenssy/article/details/21988605
+<a href="http://blog.csdn.net/chenssy/article/details/21988605" class="LinkCard">HashSet</a>
 
 在前篇博文中（java提高篇（二三）-----HashMap）详细讲解了HashMap的实现过程，对于HashSet而言，它是基于HashMap来实现的，底层采用HashMap来保存元素。所以如果对HashMap比较熟悉，那么HashSet是so easy!!
 ## 定义
@@ -123,7 +123,7 @@ clear从此 set 中移除所有元素。底层调用HashMap的clear方法清除�
             throw new InternalError();  
         }  
     } 
-``` 
+```
 clone返回此 HashSet 实例的浅表副本：并没有复制这些元素本身。
 后记：
 由于HashSet底层使用了HashMap实现，使其的实现过程变得非常简单，如果你对HashMap比较了解，那么HashSet简直是小菜一碟。有两个方法对HashMap和HashSet而言是非常重要的，下篇将详细讲解hashcode和equals。

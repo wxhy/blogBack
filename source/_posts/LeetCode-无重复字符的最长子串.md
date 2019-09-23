@@ -9,7 +9,8 @@ mathjax: true
 abbrlink: f7eda5e6
 date: 2019-09-03 09:43:00
 ---
-> 转载: https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/solution/wu-zhong-fu-zi-fu-de-zui-chang-zi-chuan-by-leetcod/
+
+<a href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/solution/wu-zhong-fu-zi-fu-de-zui-chang-zi-chuan-by-leetcod/" class="LinkCard">LeetCode-无重复字符的最长子串</a>
 
 ## 题目描述
 

@@ -7,8 +7,7 @@ categories: java开发
 abbrlink: d59c343e
 date: 2017-10-24 13:10:13
 ---
-> 转载： http://blog.csdn.net/chenssy/article/details/37756599
-
+<a href="http://blog.csdn.net/chenssy/article/details/37756599" class="LinkCard">List总结</a>
 ## List接口概述
 List接口，成为有序的Collection也就是序列。该接口可以对列表中的每一个元素的插入位置进行精确的控制，同时用户可以根据元素的整数索引（在列表中的位置）访问元素，并搜索列表中的元素。 下图是List接口的框架图： 
 ![](/uploads/list1.png)
@@ -16,7 +15,7 @@ List接口，成为有序的Collection也就是序列。该接口可以对列表
 Collection：Collection 层次结构 中的根接口。它表示一组对象，这些对象也称为 collection 的元素。对于Collection而言，它不提供任何直接的实现，所有的实现全部由它的子类负责。
 AbstractCollection：提供 Collection 接口的骨干实现，以最大限度地减少了实现此接口所需的工作。对于我们而言要实现一个不可修改的 collection，只需扩展此类，并提供 iterator 和 size 方法的实现。但要实现可修改的 collection，就必须另外重写此类的 add 方法（否则，会抛出 UnsupportedOperationException），iterator 方法返回的迭代器还必须另外实现其 remove 方法。
 <!-- more -->
-terator：迭代器。
+iterator：迭代器。
 ListIterator：系列表迭代器，允许程序员按任一方向遍历列表、迭代期间修改列表，并获得迭代器在列表中的当前位置。
 List：继承于Collection的接口。它代表着有序的队列。
 AbstractList：List 接口的骨干实现，以最大限度地减少实现“随机访问”数据存储（如数组）支持的该接口所需的工作。

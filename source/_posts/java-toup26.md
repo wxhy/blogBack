@@ -7,8 +7,7 @@ categories: java开发
 abbrlink: 822b9db
 date: 2017-10-24 13:09:53
 ---
-> 转载： http://blog.csdn.net/chenssy/article/details/23299963
-
+<a href="http://blog.csdn.net/chenssy/article/details/23299963" class="LinkCard">TreeMap</a>
 TreeMap的实现是红黑树算法的实现，所以要了解TreeMap就必须对红黑树有一定的了解,其实这篇博文的名字叫做：根据红黑树的算法来分析TreeMap的实现，但是为了与Java提高篇系列博文保持一致还是叫做TreeMap比较好。通过这篇博文你可以获得如下知识点：
 
 >1、红黑树的基本概念。

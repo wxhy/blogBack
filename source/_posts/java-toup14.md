@@ -1,4 +1,3 @@
----
 title: java提高篇（十三）-----字符串
 tags:
   - java
@@ -7,7 +6,15 @@ categories: java开发
 abbrlink: beafe466
 date: 2017-10-23 22:38:36
 ---
-> 转载： http://blog.csdn.net/chenssy/article/details/17591363
+--字符串
+tags:
+  - java
+  - 转载
+categories: java开发
+abbrlink: beafe466
+date: 2017-10-23 22:38:36
+---
+<a href="http://blog.csdn.net/chenssy/article/details/17591363" class="LinkCard">字符串</a>
 
 可以证明，字符串操作是计算机程序设计中最常见的行为。
 
@@ -18,13 +25,16 @@ date: 2017-10-23 22:38:36
 在字符串中存在一个非常特殊的地方，那就是字符串池。每当我们创建一个字符串对象时，首先就会检查字符串池中是否存在面值相等的字符串，如果有，则不再创建，直接放回字符串池中对该对象的引用，若没有则创建然后放入到字符串池中并且返回新建对象的引用。这个机制是非常有用的，因为可以提高效率，减少了内存空间的占用。所以在使用字符串的过程中，推荐使用直接赋值（即String s=”aa”），除非有必要才会新建一个String对象（即String s = new String(”aa”)）。
 对于字符串的使用无非就是这几个方面：
  ### 字符串比较
+ ```java
          equals() ------判断内容是否相同。
          compareTo() ------判断字符串的大小关系。
          compareToIgnoreCase(String int) ------在比较时忽略字母大小写。
          == ------判断内容与地址是否相同。
          equalsIgnoreCase() ------忽略大小写的情况下判断内容是否相同。
          reagionMatches() ------对字符串中的部分内容是否相同进行比较（详情请参考API）。
+ ```
 ### 字符串查找
+ ```java
          charAt(int index) ------返回指定索引index位置上的字符，索引范围从0开始。
          indexOf(String str)------从字符串开始检索str，并返回第一次出现的位置，未出现返回-1。
          indexOf(String str，int fromIndex);------从字符串的第fromIndex个字符开始检索str。
@@ -33,17 +43,23 @@ date: 2017-10-23 22:38:36
          starWith(String prefix，int toffset)-----测试此字符串从指定索引开始的子字符串是否以指定前缀开始。
          starWith(String prefix)------测试此字符串是否以指定的前缀开始。
          endsWith(String suffix)------测试此字符串是否以指定的后缀结束。
+ ```
 ### 字符串截取
+```java
         ------返回一个新的字符串，它是此字符串的一个子字符串。
         public String subString(int beginIndex)
         ------返回的字符串是从beginIndex开始到endIndex-1的串。
         public String subString(int beginIndex，int endIndex)
+```
 ### 字符串替换
-         public String replace(char oldChar，char newChar)。
+```java
+         public String replace(char oldChar，char newChar)
          public String replace(CharSequence target，CharSequence replacement)
          ------把原来的etarget子序列替换为replacement序列，返回新串。
          public String replaceAll(String regex，String replacement)------用正则表达式实现对字符串的匹配。
+         
          注意replaceAll第一个参数为正则表达式，鄙人曾经深受其害。
+```
 ### 更多方法请参考API
 
 ## StringBuffer
@@ -51,11 +67,11 @@ StringBuffer和String一样都是用来存储字符串的，只不过由于他�
 其实在使用方法，StringBuffer的许多方法和String类都差不多，所表示的功能几乎一模一样，只不过在修改时StringBuffer都是修改自身，而String类则是产生一个新的对象，这是他们之间最大的区别。
 同时StringBuffer是不能使用=进行初始化的，它必须要产生StringBuffer实例，也就是说你必须通过它的构造方法进行初始化。
 在StringBuffer的使用方面，它更加侧重于对字符串的变化，例如追加、修改、删除，相对应的方法：
-
+```java
       1、append()：追加指定内容到当前StringBuffer对象的末尾，类似于字符串的连接，这里StringBuffer对象的内容会发生改变。
       2、insert：该类方法主要是在StringBuffer对象中插入内容。
       3、delete：该类方法主要用于移除StringBuffer对象中的内容。
-
+```
 ## StringBuilder
 StringBuilder也是一个可变的字符串对象，他与StringBuffer不同之处就在于它是线程不安全的，基于这点，它的速度一般都比StringBuffer快。与StringBuffer一样，StringBuider的主要操作也是append与insert方法。这两个方法都能有效地将给定的数据转换成字符串，然后将该字符串的字符添加或插入到字符串生成器中。
 上面只是简单的介绍了String、StringBuffer、StringBuilder，其实对于这三者我们应该更加侧重于他们只见到的区别，只有理清楚他们之间的区别才能够更好的使用他们。
@@ -67,14 +83,19 @@ StringBuilder也是一个可变的字符串对象，他与StringBuffer不同之�
 这里对于String是否为线程安全，鄙人也不是很清楚，原因：String不可变，所有的操作都是不可能改变其值的，是否存在线程安全一说还真不好说？但是如果硬要说线程是否安全的话，因为内容不可变，永远都是安全的。
       在使用方面由于String每次修改都需要产生一个新的对象，所以对于经常需要改变内容的字符串最好选择StringBuffer或者StringBuilder.而对于StringBuffer，每次操作都是对StringBuffer对象本身，它不会生成新的对象，所以StringBuffer特别适用于字符串内容经常改变的情况下。
       但是并不是所有的String字符串操作都会比StringBuffer慢，在某些特殊的情况下，String字符串的拼接会被JVM解析成StringBuilder对象拼接，在这种情况下String的速度比StringBuffer的速度快。如：
-      String name = ”I ” + ”am ” + ”chenssy ” ;
-      StringBuffer name = new StringBuffer(”I ”).append(” am ”).append(” chenssy ”);
-      对于这两种方式，你会发现第一种比第二种快太多了，在这里StringBuffer的优势荡然无存。其真实的原因就在于JVM做了一下优化处理，其实String name = ”I ” + ”am ” + ”chenssy ” ;在JVM眼中就是String name = ”I am chenssy ” ;这样的方式对于JVM而言，真的是不要什么时间。但是如果我们在这个其中增加一个String对象，那么JVM就会按照原来那种规范来构建String对象了。
-      对于这三者使用的场景做如下概括（参考：《编写搞质量代码：改善java程序的151个建议》）：
-         1、String：在字符串不经常变化的场景中可以使用String类，如：常量的声明、少量的变量运算等。
-         2、StringBuffer：在频繁进行字符串的运算（拼接、替换、删除等），并且运行在多线程的环境中，则可以考虑使用StringBuffer，例如XML解析、HTTP参数解析和封装等。
-         3、StringBuilder：在频繁进行字符串的运算（拼接、替换、删除等），并且运行在多线程的环境中，则可以考虑使用StringBuffer，如SQL语句的拼装、JSON封装等（貌似这两个我也是使用|StringBuffer）。
-      更多有关于他们之间区别，请参考：http://www.cnblogs.com/zuoxiaolong/p/lang1.html。鄙人就不画蛇添足了。
+```java
+String name = ”I ” + ”am ” + ”chenssy ” ;
+StringBuffer name = new StringBuffer(”I ”).append(” am ”).append(” chenssy”);     
+```
+ 
+
+对于这两种方式，你会发现第一种比第二种快太多了，在这里StringBuffer的优势荡然无存。其真实的原因就在于JVM做了一下优化处理，其实<code>String name = ”I ” + ”am ” + ”chenssy ”;</code>在JVM眼中就是<code>String name = ”I am chenssy ” ;</code>这样的方式对于JVM而言，真的是不要什么时间。但是如果我们在这个其中增加一个String对象，那么JVM就会按照原来那种规范来构建String对象了。
+对于这三者使用的场景做如下概括（参考：《编写搞质量代码：改善java程序的151个建议》）：
+    
++ String：在字符串不经常变化的场景中可以使用String类，如：常量的声明、少量的变量运算等。
++ StringBuffer：在频繁进行字符串的运算（拼接、替换、删除等），并且运行在多线程的环境中，则可以考虑使用StringBuffer，例如XML解析、HTTP参数解析和封装等。
++ StringBuilder：在频繁进行字符串的运算（拼接、替换、删除等），并且运行在多线程的环境中，则可以考虑使用StringBuffer，如SQL语句的拼装、JSON封装等（貌似这两个我也是使用|StringBuffer）。
++ 更多有关于他们之间区别，请参考：http://www.cnblogs.com/zuoxiaolong/p/lang1.html。鄙人就不画蛇添足了。
 ## 字符串拼接方式
 对于字符串而言我们经常是要对其进行拼装处理的，在java中提高了三种拼装的方法：+、concat()以及append()方法。这三者之间存在什么区别呢？先看如下示例：
 

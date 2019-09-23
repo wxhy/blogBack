@@ -1,4 +1,3 @@
----
 title: java提高篇（十二）-----equals()
 tags:
   - java
@@ -7,11 +6,11 @@ categories: java开发
 abbrlink: 1ddeb0f4
 date: 2017-10-23 22:38:32
 ---
-> 转载： http://blog.csdn.net/chenssy/article/details/14963073
+<a href="http://blog.csdn.net/chenssy/article/details/14963073" class="LinkCard">equals()</a>
 
- equals()
-       超类Object中有这个equals()方法，该方法主要用于比较两个对象是否相等。该方法的源码如下：
-```
+
+超类Object中有这个equals()方法，该方法主要用于比较两个对象是否相等。该方法的源码如下：
+```java
 public boolean equals(Object obj) {  
     return (this == obj);  
     }  

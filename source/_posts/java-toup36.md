@@ -7,8 +7,7 @@ categories: java开发
 abbrlink: '46384154'
 date: 2017-10-24 13:10:28
 ---
-> 转载： http://blog.csdn.net/chenssy/article/details/44102915
-
+<a href="http://blog.csdn.net/chenssy/article/details/44102915" class="LinkCard">Java集合细节（三）：subList的缺陷</a>
 我们经常使用subString方法来对String对象进行分割处理，同时我们也可以使用subList、subMap、subSet来对List、Map、Set进行分割处理，但是这个分割存在某些瑕疵。
 
 ## subList返回仅仅只是一个视图

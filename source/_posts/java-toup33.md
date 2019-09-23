@@ -7,8 +7,7 @@ categories: java开发
 abbrlink: a04d7e6d
 date: 2017-10-24 13:10:19
 ---
-> 转载： http://blog.csdn.net/chenssy/article/details/38151189
-
+<a href="http://blog.csdn.net/chenssy/article/details/38151189" class="LinkCard">fail-fast机制</a>
 在JDK的Collection中我们时常会看到类似于这样的话：
 例如，ArrayList:
 注意，迭代器的快速失败行为无法得到保证，因为一般来说，不可能对是否出现不同步并发修改做出任何硬性保证。快速失败迭代器会尽最大努力抛出 ConcurrentModificationException。因此，为提高这类迭代器的正确性而编写一个依赖于此异常的程序是错误的做法：迭代器的快速失败行为应该仅用于检测 bug。

@@ -7,8 +7,7 @@ categories: java开发
 abbrlink: a7e9a612
 date: 2017-10-24 13:10:10
 ---
-> 转载： http://blog.csdn.net/chenssy/article/details/37756539
-
+<a href="http://blog.csdn.net/chenssy/article/details/37756539" class="LinkCard">Stack</a>
  在Java中Stack类表示后进先出（LIFO）的对象堆栈。栈是一种非常常见的数据结构，它采用典型的先进后出的操作方式完成的。每一个栈都包含一个栈顶，每次出栈是将栈顶的数据取出，如下：
 
 

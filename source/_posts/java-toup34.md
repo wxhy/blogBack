@@ -7,8 +7,7 @@ categories: java开发
 abbrlink: 17dabf45
 date: 2017-10-24 13:10:22
 ---
-> 转载： http://blog.csdn.net/chenssy/article/details/38373833
-
+<a href="http://blog.csdn.net/chenssy/article/details/38373833" class="LinkCard">java集合细节（二）：asList的缺陷</a>
 集合是我们在Java编程中使用非常广泛的，它就像大海，海纳百川，像万能容器，盛装万物，而且这个大海，万能容器还可以无限变大（如果条件允许）。当这个海、容器的量变得非常大的时候，它的初始容量就会显得很重要了，因为挖海、扩容是需要消耗大量的人力物力财力的。同样的道理，Collection的初始容量也显得异常重要。所以：对于已知的情景，请为集合指定初始容量。
 
 
