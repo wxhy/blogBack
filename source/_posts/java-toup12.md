@@ -6,14 +6,6 @@ categories: java开发
 abbrlink: ed0f4534
 date: 2017-10-23 22:38:24
 ---
---代码块
-tags:
-  - java
-  - 转载
-categories: java开发
-abbrlink: ed0f4534
-date: 2017-10-23 22:38:24
----
 <a href="http://blog.csdn.net/chenssy/article/details/14486833" class="LinkCard">代码块</a>
 
 在编程过程中我们可能会遇到如下这种形式的程序：

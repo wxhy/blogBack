@@ -6,14 +6,6 @@ categories: java开发
 abbrlink: '30043e85'
 date: 2017-10-23 13:38:12
 ---
---详解内部类
-tags:
-  - java
-  - 转载
-categories: java开发
-abbrlink: '30043e85'
-date: 2017-10-23 13:38:12
----
 <a href="http://blog.csdn.net/chenssy/article/details/13024951" class="LinkCard">详解内部类</a>
 
 可以将一个类的定义放在另一个类的定义内部，这就是内部类。

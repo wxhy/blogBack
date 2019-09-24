@@ -6,14 +6,6 @@ categories: java开发
 abbrlink: ea4aa8e
 date: 2017-10-23 13:04:03
 ---
---抽象类与接口
-tags:
-  - java
-  - 转载
-categories: java开发
-abbrlink: ea4aa8e
-date: 2017-10-23 13:04:03
----
 <a href="http://blog.csdn.net/chenssy/article/details/12858267" class="LinkCard">抽象类与接口</a>
 
 接口和内部类为我们提供了一种将接口与实现分离的更加结构化的方法。

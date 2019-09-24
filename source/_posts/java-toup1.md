@@ -6,14 +6,6 @@ categories: java开发
 abbrlink: 54d31add
 date: 2017-10-20 23:34:10
 ---
---详解java的四舍五入与保留位
-tags:
-  - java
-  - 转载
-categories: java开发
-abbrlink: 54d31add
-date: 2017-10-20 23:34:10
----
 <a href="http://blog.csdn.net/chenssy/article/details/12719811" class="LinkCard">java提高篇-----详解java的四舍五入与保留位</a>
 
 四舍五入是我们小学的数学问题，这个问题对于我们程序猿来说就类似于1到10加减乘除那么简单了。
